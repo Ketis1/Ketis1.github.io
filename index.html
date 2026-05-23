@@ -667,11 +667,298 @@
   .inline-lang { display: none; }
   .inline-lang.en { display: inline; }
 
+  /* NAV CONTROLS CLUSTER */
+  .nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .mode-switcher {
+    display: flex;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 2px;
+    border-radius: 4px;
+  }
+
+  .mode-btn {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    padding: 4px 12px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.2s;
+  }
+
+  .mode-btn:hover {
+    color: #fff;
+  }
+
+  .mode-btn.active {
+    background: var(--cyan-dim);
+    color: var(--cyan);
+    border: 1px solid rgba(0, 245, 255, 0.2);
+    box-shadow: var(--glow-cyan);
+  }
+
+  /* PERSONAL DASHBOARD STYLES */
+  .personal-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+  }
+
+  .personal-tab {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 8px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.25s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .personal-tab:hover {
+    color: #fff;
+    border-color: rgba(0,245,255,0.3);
+  }
+
+  .personal-tab.active {
+    color: var(--cyan);
+    border-color: var(--cyan);
+    box-shadow: var(--glow-cyan);
+    background: var(--cyan-dim);
+  }
+
+  .personal-tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+
+  .personal-tab-content.active {
+    display: block;
+  }
+
+  .personal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .personal-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    transition: border-color 0.25s, box-shadow 0.25s;
+  }
+
+  .personal-card:hover {
+    border-color: rgba(0,245,255,0.2);
+    box-shadow: 0 0 25px rgba(0,245,255,0.03);
+  }
+
+  .personal-card.wide {
+    grid-column: 1 / -1;
+  }
+
+  .personal-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.75rem;
+  }
+
+  .personal-card-header h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.08em;
+  }
+
+  .cyber-badge {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border: 1px solid;
+    letter-spacing: 0.1em;
+  }
+
+  .cyber-badge.cyan {
+    border-color: var(--cyan);
+    color: var(--cyan);
+  }
+
+  .cyber-badge.magenta {
+    border-color: var(--magenta);
+    color: var(--magenta);
+  }
+
+  .personal-card-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+
+  /* Peak List Items */
+  .peak-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .peak-item {
+    display: flex;
+    justify-content: space-between;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--cyan);
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .peak-item.todo {
+    border-left-color: var(--magenta);
+    opacity: 0.85;
+  }
+
+  .peak-name {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .peak-stat {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  /* Movie Cards */
+  .movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .movie-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    transition: all 0.25s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+  }
+
+  .movie-card:hover {
+    border-color: rgba(255, 0, 170, 0.3);
+    box-shadow: 0 0 25px rgba(255,0,170,0.05);
+  }
+
+  .movie-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .movie-title {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    color: #fff;
+    font-size: 0.95rem;
+  }
+
+  .movie-rating {
+    color: var(--cyan);
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+  }
+
+  .movie-desc {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex: 1;
+  }
+
+  .movie-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  /* About Me Text */
+  .about-me-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .quick-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1.25rem;
+  }
+
+  .fact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .fact-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--magenta);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .fact-value {
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+
+  /* Animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
   /* MOBILE */
   @media (max-width: 640px) {
-    .nav-links { display: none; }
+    .nav-links { display: none !important; }
     .hero-name { font-size: 2.2rem; }
     main { padding: 72px 1.25rem 3rem; }
+    .nav-controls { gap: 0.5rem; }
+    .mode-btn { padding: 4px 8px; font-size: 0.65rem; }
+    .lang-switcher { gap: 0.2rem; }
+    .lang-btn { padding: 2px 6px; font-size: 0.65rem; }
   }
 </style>
 </head>
@@ -679,23 +966,34 @@
 
 <nav>
   <div class="nav-logo">&lt;MICHAŁ_SITEK/&gt;</div>
-  <ul class="nav-links">
+  <ul class="nav-links" id="prof-nav-links">
     <li><a href="#experience" data-i18n="nav_exp">Experience</a></li>
     <li><a href="#education" data-i18n="nav_edu">Education</a></li>
     <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
     <li><a href="#projects" data-i18n="nav_proj">Projects</a></li>
     <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
   </ul>
-  <div class="lang-switcher">
-    <button class="lang-btn active" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" onclick="setLang('pl')">PL</button>
-    <button class="lang-btn" onclick="setLang('de')">DE</button>
+  <ul class="nav-links" id="pers-nav-links" style="display: none;">
+    <li><a href="#about-me" onclick="switchPersonalTab('about-me')" data-i18n="nav_about_me">About Me</a></li>
+    <li><a href="#mountains" onclick="switchPersonalTab('mountains')" data-i18n="nav_mountains">Mountains</a></li>
+    <li><a href="#movies" onclick="switchPersonalTab('movies')" data-i18n="nav_movies">Movies</a></li>
+  </ul>
+  <div class="nav-controls">
+    <div class="mode-switcher">
+      <button class="mode-btn active" id="btn-mode-prof" onclick="toggleView('professional')" data-i18n="mode_prof">Professional</button>
+      <button class="mode-btn" id="btn-mode-pers" onclick="toggleView('personal')" data-i18n="mode_pers">Personal</button>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('pl')">PL</button>
+      <button class="lang-btn" onclick="setLang('de')">DE</button>
+    </div>
   </div>
 </nav>
 
 <main>
-
-  <!-- HERO -->
+  <div id="professional-view">
+    <!-- HERO -->
   <section id="hero">
     <div class="hero-tag">&gt; INITIALIZING PROFILE...</div>
     <h1 class="hero-name">
@@ -1012,6 +1310,214 @@
       </div>
     </div>
   </section>
+  </div> <!-- END OF professional-view -->
+
+  <div id="personal-view" style="display: none;">
+    <section id="personal-hero">
+      <div class="section-label" data-i18n="personal_logs_label">Personal Logs</div>
+      <h2 data-i18n="personal_logs_heading">OFF-DUTY DATABASE</h2>
+      <p class="hero-bio" data-i18n="personal_logs_bio">
+        Exploring life beyond compilation and AI architectures. Log files for physical ascents, artistic inspirations, and off-duty activities.
+      </p>
+    </section>
+
+    <!-- Subtab Navigation inside Personal View -->
+    <div class="personal-tabs">
+      <button class="personal-tab active" onclick="switchPersonalTab('about-me')" data-personal-tab="about-me">
+        <span data-i18n="personal_tab_about">About Me</span>
+      </button>
+      <button class="personal-tab" onclick="switchPersonalTab('mountains')" data-personal-tab="mountains">
+        <span data-i18n="personal_tab_mountains">Mountains</span>
+      </button>
+      <button class="personal-tab" onclick="switchPersonalTab('movies')" data-personal-tab="movies">
+        <span data-i18n="personal_tab_movies">Movies</span>
+      </button>
+    </div>
+
+    <!-- Personal Tab Contents -->
+    <div class="personal-tab-content" id="tab-about-me">
+      <div class="personal-grid">
+        <div class="personal-card wide">
+          <div class="personal-card-header">
+            <h3 data-i18n="about_me_logs_title">LIFE ENCODING</h3>
+          </div>
+          <div class="about-me-text">
+            <p data-i18n="about_me_text_1">Beyond tech, I am passionate about exploring the great outdoors and pushing physical limits. Mountain hiking gives me a perfect mental reset and fuels my focus for technical research.</p>
+            <p data-i18n="about_me_text_2">I also have a deep curiosity for psychology, computational neuroscience, and exploring how the human brain processes information compared to modern artificial networks.</p>
+          </div>
+          <div class="quick-facts">
+            <div class="fact-item">
+              <span class="fact-label" data-i18n="fact_interests_label">Interests</span>
+              <span class="fact-value" data-i18n="fact_interests_val">Hiking, Sci-Fi Movies, Guitar, Reading</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label" data-i18n="fact_setup_label">Setup</span>
+              <span class="fact-value">Arch Linux / Windows Subsystem for Linux</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="personal-tab-content" id="tab-mountains">
+      <div class="personal-grid">
+        <!-- Achieved Peaks -->
+        <div class="personal-card">
+          <div class="personal-card-header">
+            <h3 data-i18n="mountains_achieved_title">CONQUERED PEAKS</h3>
+            <span class="cyber-badge cyan" data-i18n="mountains_status_conquered">VERIFIED</span>
+          </div>
+          <p class="personal-card-desc" data-i18n="mountains_achieved_desc">Highest points reached in Poland and beyond.</p>
+          <ul class="peak-list">
+            <li class="peak-item">
+              <span class="peak-name">Małołączniak</span>
+              <span class="peak-stat">2096m · Tatry</span>
+            </li>
+            <li class="peak-item">
+              <span class="peak-name">Kopa Kondracka</span>
+              <span class="peak-stat">2005m · Tatry</span>
+            </li>
+            <li class="peak-item">
+              <span class="peak-name">Śnieżka</span>
+              <span class="peak-stat">1603m · Karkonosze</span>
+            </li>
+            <li class="peak-item">
+              <span class="peak-name">Sarnia Skała</span>
+              <span class="peak-stat">1377m · Tatry</span>
+            </li>
+            <li class="peak-item">
+              <span class="peak-name">Trzy Korony</span>
+              <span class="peak-stat">982m · Pieniny</span>
+            </li>
+            <li class="peak-item">
+              <span class="peak-name">Górka Szczęśliwicka</span>
+              <span class="peak-stat">152m · Warszawa</span>
+            </li>
+          </ul>
+        </div>
+        <!-- Wishlist Peaks -->
+        <div class="personal-card">
+          <div class="personal-card-header">
+            <h3 data-i18n="mountains_wishlist_title">FUTURE ASCENTS</h3>
+            <span class="cyber-badge magenta" data-i18n="mountains_status_wishlist">QUEUED</span>
+          </div>
+          <p class="personal-card-desc" data-i18n="mountains_wishlist_desc">Upcoming expeditions and training goals.</p>
+          <ul class="peak-list">
+            <li class="peak-item todo">
+              <span class="peak-name">Elbrus</span>
+              <span class="peak-stat">5642m · Caucasus</span>
+            </li>
+            <li class="peak-item todo">
+              <span class="peak-name">Mont Blanc</span>
+              <span class="peak-stat">4807m · Alps</span>
+            </li>
+            <li class="peak-item todo">
+              <span class="peak-name">Grossglockner</span>
+              <span class="peak-stat">3798m · Alps</span>
+            </li>
+            <li class="peak-item todo">
+              <span class="peak-name">Mount Fuji</span>
+              <span class="peak-stat">3776m · Japan</span>
+            </li>
+            <li class="peak-item todo">
+              <span class="peak-name">Mount Teide</span>
+              <span class="peak-stat">3715m · Canary Islands</span>
+            </li>
+            <li class="peak-item todo">
+              <span class="peak-name">Hoher Dachstein</span>
+              <span class="peak-stat">2995m · Alps</span>
+            </li>
+            <li class="peak-item todo">
+              <span class="peak-name">Zugspitze</span>
+              <span class="peak-stat">2962m · Alps</span>
+            </li>
+            <li class="peak-item todo">
+              <span class="peak-name">Musala</span>
+              <span class="peak-stat">2925m · Rila</span>
+            </li>
+            <li class="peak-item todo">
+              <span class="peak-name">Mount Olympus</span>
+              <span class="peak-stat">2917m · Greece</span>
+            </li>
+            <li class="peak-item todo">
+              <span class="peak-name">Triglav</span>
+              <span class="peak-stat">2864m · Julian Alps</span>
+            </li>
+            <li class="peak-item todo">
+              <span class="peak-name">Mt Korab</span>
+              <span class="peak-stat">2764m · Albania/N. Macedonia</span>
+            </li>
+            <li class="peak-item todo">
+              <span class="peak-name">Gerlach</span>
+              <span class="peak-stat">2655m · Tatry</span>
+            </li>
+            <li class="peak-item todo">
+              <span class="peak-name">Rysy</span>
+              <span class="peak-stat">2499m · Tatry</span>
+            </li>
+            <li class="peak-item todo">
+              <span class="peak-name">Świnica</span>
+              <span class="peak-stat">2302m · Tatry</span>
+            </li>
+            <li class="peak-item todo">
+              <span class="peak-name">Giewont</span>
+              <span class="peak-stat">1894m · Tatry</span>
+            </li>
+            <li class="peak-item todo">
+              <span class="peak-name">Wank</span>
+              <span class="peak-stat">1780m · Bavarian Alps</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="personal-tab-content" id="tab-movies">
+      <div class="movie-grid">
+        <!-- Movie 1 -->
+        <div class="movie-card">
+          <div class="movie-header">
+            <span class="movie-title">Interstellar</span>
+            <span class="movie-rating">★★★★★</span>
+          </div>
+          <p class="movie-desc" data-i18n="movie_interstellar_desc">A masterpiece where time dilation, astrophysics, and human emotion converge. Unbelievable soundtrack and visuals.</p>
+          <div class="movie-tags">
+            <span class="project-tag">Sci-Fi</span>
+            <span class="project-tag">Space</span>
+            <span class="project-tag">Drama</span>
+          </div>
+        </div>
+        <!-- Movie 2 -->
+        <div class="movie-card">
+          <div class="movie-header">
+            <span class="movie-title">Blade Runner 2049</span>
+            <span class="movie-rating">★★★★★</span>
+          </div>
+          <p class="movie-desc" data-i18n="movie_bladerunner_desc">Visually magnificent cyber-noir epic exploring AI sentience, isolation, and identity. A major artistic influence.</p>
+          <div class="movie-tags">
+            <span class="project-tag">Sci-Fi</span>
+            <span class="project-tag">Cyberpunk</span>
+            <span class="project-tag">Noir</span>
+          </div>
+        </div>
+        <!-- Movie 3 -->
+        <div class="movie-card">
+          <div class="movie-header">
+            <span class="movie-title">Inception</span>
+            <span class="movie-rating">★★★★☆</span>
+          </div>
+          <p class="movie-desc" data-i18n="movie_inception_desc">Brilliant dream-within-a-dream heuristic architecture. Captures human subconscious and memory dynamics perfectly.</p>
+          <div class="movie-tags">
+            <span class="project-tag">Sci-Fi</span>
+            <span class="project-tag">Thriller</span>
+            <span class="project-tag">Mind-Bending</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div> <!-- END OF personal-view -->
 
 </main>
 
@@ -1063,7 +1569,24 @@ const i18n = {
     int_neuro: "Computational Neuroscience", int_bio: "Bioinformatics",
     int_hci: "Human-Computer Interaction", int_fs: "Fullstack Development",
     contact_heading: "Get In Touch", contact_location: "Location", contact_city: "Warsaw & Berlin",
-    footer_text: "</MICHAŁ_SITEK> · Built with HTML, CSS & JavaScript · Hosted on GitHub Pages"
+    footer_text: "</MICHAŁ_SITEK> · Built with HTML, CSS & JavaScript · Hosted on GitHub Pages",
+    mode_prof: "Professional", mode_pers: "Personal",
+    nav_mountains: "Mountains", nav_movies: "Movies", nav_about_me: "About Me",
+    personal_logs_label: "Personal Logs", personal_logs_heading: "OFF-DUTY DATABASE",
+    personal_logs_bio: "Exploring life beyond compilation and AI architectures. Log files for physical ascents, artistic inspirations, and off-duty activities.",
+    personal_tab_mountains: "Mountains", personal_tab_movies: "Movies", personal_tab_about: "About Me",
+    mountains_achieved_title: "CONQUERED PEAKS", mountains_status_conquered: "VERIFIED",
+    mountains_achieved_desc: "Highest points reached in Poland and beyond.",
+    mountains_wishlist_title: "FUTURE ASCENTS", mountains_status_wishlist: "QUEUED",
+    mountains_wishlist_desc: "Upcoming expeditions and training goals.",
+    movie_interstellar_desc: "A masterpiece where time dilation, astrophysics, and human emotion converge. Unbelievable soundtrack and visuals.",
+    movie_bladerunner_desc: "Visually magnificent cyber-noir epic exploring AI sentience, isolation, and identity. A major artistic influence.",
+    movie_inception_desc: "Brilliant dream-within-a-dream heuristic architecture. Captures human subconscious and memory dynamics perfectly.",
+    about_me_logs_title: "LIFE ENCODING",
+    about_me_text_1: "Beyond tech, I am passionate about exploring the great outdoors and pushing physical limits. Mountain hiking gives me a perfect mental reset and fuels my focus for technical research.",
+    about_me_text_2: "I also have a deep curiosity for psychology, computational neuroscience, and exploring how the human brain processes information compared to modern artificial networks.",
+    fact_interests_label: "Interests", fact_interests_val: "Hiking, Sci-Fi Movies, Guitar, Reading",
+    fact_setup_label: "Setup"
   },
   pl: {
     nav_exp: "Doświadczenie", nav_edu: "Edukacja", nav_skills: "Umiejętności",
@@ -1107,7 +1630,24 @@ const i18n = {
     int_neuro: "Neuronauka Obliczeniowa", int_bio: "Bioinformatyka",
     int_hci: "Interakcja Człowiek-Komputer", int_fs: "Fullstack Development",
     contact_heading: "Kontakt", contact_location: "Lokalizacja", contact_city: "Warszawa & Berlin",
-    footer_text: "</MICHAŁ_SITEK> · Zbudowane z HTML, CSS i JavaScript · Hostowane na GitHub Pages"
+    footer_text: "</MICHAŁ_SITEK> · Zbudowane z HTML, CSS i JavaScript · Hostowane na GitHub Pages",
+    mode_prof: "Profesjonalne", mode_pers: "Prywatne",
+    nav_mountains: "Góry", nav_movies: "Filmy", nav_about_me: "O mnie",
+    personal_logs_label: "Rejestry Osobiste", personal_logs_heading: "BAZA DANYCH PO SŁUŻBIE",
+    personal_logs_bio: "Odkrywanie życia poza kompilacją i architekturami AI. Logi z fizycznych podejść, artystycznych inspiracji i aktywności poza pracą.",
+    personal_tab_mountains: "Góry", personal_tab_movies: "Filmy", personal_tab_about: "O mnie",
+    mountains_achieved_title: "ZDOBYTE SZCZYTY", mountains_status_conquered: "ZWERYFIKOWANO",
+    mountains_achieved_desc: "Najwyższe punkty osiągnięte w Polsce i poza nią.",
+    mountains_wishlist_title: "PRZYSZŁE WEJŚCIA", mountains_status_wishlist: "W KOLEJCE",
+    mountains_wishlist_desc: "Nadchodzące wyprawy i cele treningowe.",
+    movie_interstellar_desc: "Arcydzieło, w którym zbiegają się dylatacja czasu, astrofizyka i ludzkie emocje. Niewiarygodna ścieżka dźwiękowa i efekty wizualne.",
+    movie_bladerunner_desc: "Wspaniały wizualnie epos cyber-noir badający świadomość AI, izolację i tożsamość. Główna inspiracja artystyczna.",
+    movie_inception_desc: "Genialna heurystyczna architektura snu w snach. Idealnie oddaje dynamikę ludzkiej podświadomości i pamięci.",
+    about_me_logs_title: "KODOWANIE ŻYCIA",
+    about_me_text_1: "Poza technologią pasjonuję się odkrywaniem natury i przesuwaniem barier fizycznych. Wędrówki górskie zapewniają mi doskonały reset psychiczny i napędzają moją koncentrację na badaniach technicznych.",
+    about_me_text_2: "Mam także głęboką ciekaowość psychologii, neuronauki obliczeniowej i badania tego, jak ludzki mózg przetwarza informacje w porównaniu do współczesnych sztucznych sieci.",
+    fact_interests_label: "Zainteresowania", fact_interests_val: "Góry, Filmy Sci-Fi, Gitara, Czytanie",
+    fact_setup_label: "System"
   },
   de: {
     nav_exp: "Erfahrung", nav_edu: "Ausbildung", nav_skills: "Fähigkeiten",
@@ -1151,7 +1691,24 @@ const i18n = {
     int_neuro: "Computational Neuroscience", int_bio: "Bioinformatik",
     int_hci: "Mensch-Computer-Interaktion", int_fs: "Fullstack-Entwicklung",
     contact_heading: "Kontakt aufnehmen", contact_location: "Standort", contact_city: "Warschau & Berlin",
-    footer_text: "</MICHAŁ_SITEK> · Erstellt mit HTML, CSS & JavaScript · Gehostet auf GitHub Pages"
+    footer_text: "</MICHAŁ_SITEK> · Erstellt mit HTML, CSS & JavaScript · Gehostet auf GitHub Pages",
+    mode_prof: "Beruflich", mode_pers: "Persönlich",
+    nav_mountains: "Berge", nav_movies: "Filme", nav_about_me: "Über mich",
+    personal_logs_label: "Persönliche Protokolle", personal_logs_heading: "OFF-DUTY DATENBANK",
+    personal_logs_bio: "Erforschung des Lebens jenseits von Kompilierung und KI-Architekturen. Protokolldateien für physische Aufstiege, künstlerische Inspirationen und Freizeitaktivitäten.",
+    personal_tab_mountains: "Berge", personal_tab_movies: "Filme", personal_tab_about: "Über mich",
+    mountains_achieved_title: "BEZWUNGENE GIPFEL", mountains_status_conquered: "VERIFIZIERT",
+    mountains_achieved_desc: "Die höchsten erreichten Punkte in Polen und darüber hinaus.",
+    mountains_wishlist_title: "ZUKÜNFTIGE AUFSTIEGE", mountains_status_wishlist: "GEPLANT",
+    mountains_wishlist_desc: "Anstehende Expeditionen und Trainingsziele.",
+    movie_interstellar_desc: "Ein Meisterwerk, in dem Zeitdilatation, Astrophysik und menschliche Gefühle verschmelzen. Unglaublicher Soundtrack und visuelle Effekte.",
+    movie_bladerunner_desc: "Ein visuell grandioses Cyber-Noir-Epos, das KI-Empfindungsvermögen, Isolation und Identität erforscht. Ein wichtiger künstlerischer Einfluss.",
+    movie_inception_desc: "Geniale Traum-im-Traum-Heuristik-Architektur. Erfasst das menschliche Unterbewusstsein und die Gedächtnisdynamik perfekt.",
+    about_me_logs_title: "KODIERUNG DES LEBENS",
+    about_me_text_1: "Neben der Technologie bin ich leidenschaftlich gerne in der Natur unterwegs und verschiebe körperliche Grenzen. Bergwandern gibt mir einen perfekten mentalen Reset und fördert meine Konzentration auf die technische Forschung.",
+    about_me_text_2: "Ich hege auch eine tiefe Neugierde für Psychologie, Computational Neuroscience und die Erforschung dessen, wie das menschliche Gehirn Informationen im Vergleich zu modernen künstlichen Netzwerken verarbeitet.",
+    fact_interests_label: "Interessen", fact_interests_val: "Wandern, Sci-Fi Filme, Gitarre, Lesen",
+    fact_setup_label: "Setup"
   }
 };
 
@@ -1174,6 +1731,41 @@ function revealEmail(event, element) {
     element.textContent = '✉ michal.sitek.it@gmail.com';
     navigator.clipboard.writeText('michal.sitek.it@gmail.com').catch(err => {});
   }
+}
+
+function toggleView(mode) {
+  const profView = document.getElementById('professional-view');
+  const persView = document.getElementById('personal-view');
+  const profNav = document.getElementById('prof-nav-links');
+  const persNav = document.getElementById('pers-nav-links');
+  const btnProf = document.getElementById('btn-mode-prof');
+  const btnPers = document.getElementById('btn-mode-pers');
+
+  if (mode === 'personal') {
+    profView.style.display = 'none';
+    persView.style.display = 'block';
+    if (profNav) profNav.style.display = 'none';
+    if (persNav) persNav.style.display = 'flex';
+    btnProf.classList.remove('active');
+    btnPers.classList.add('active');
+    switchPersonalTab('about-me');
+  } else {
+    profView.style.display = 'block';
+    persView.style.display = 'none';
+    if (profNav) profNav.style.display = 'flex';
+    if (persNav) persNav.style.display = 'none';
+    btnProf.classList.add('active');
+    btnPers.classList.remove('active');
+  }
+}
+
+function switchPersonalTab(tabId) {
+  document.querySelectorAll('.personal-tab').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-personal-tab') === tabId);
+  });
+  document.querySelectorAll('.personal-tab-content').forEach(content => {
+    content.classList.toggle('active', content.id === `tab-${tabId}`);
+  });
 }
 
 // Calculate dynamic junior duration
