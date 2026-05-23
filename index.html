@@ -709,7 +709,7 @@
     <div class="hero-links">
       <a href="https://github.com/Ketis1" target="_blank" class="hero-link cyan">⌥ GitHub</a>
       <a href="https://www.linkedin.com/in/micha%C5%82-sitek-095665409/" target="_blank" class="hero-link cyan">in LinkedIn</a>
-      <a href="mailto:michal.sitek.it@gmail.com" class="hero-link magenta">✉ Email</a>
+      <a href="mailto:michal.sitek.it@gmail.com" class="hero-link magenta" onclick="revealEmail(event, this)">✉ Email</a>
     </div>
   </section>
 
@@ -724,11 +724,11 @@
       <div class="exp-roles">
         <div class="exp-role-item">
           <span class="exp-role" data-i18n="exp_role_junior">Junior Software Engineer</span>
-          <span class="exp-date" data-i18n="exp_date_junior">03.2025 — present · 5 months</span>
+          <span class="exp-date" data-i18n="exp_date_junior">01.2026 — present</span>
         </div>
         <div class="exp-role-item">
           <span class="exp-role" data-i18n="exp_role_intern">Software Engineering Intern</span>
-          <span class="exp-date" data-i18n="exp_date_intern">11.2024 — 01.2025 · 3 months</span>
+          <span class="exp-date" data-i18n="exp_date_intern">10.2025 — 12.2025 · 3 months</span>
         </div>
       </div>
       <p class="exp-desc" data-i18n="exp_desc">
@@ -1029,9 +1029,9 @@ const i18n = {
     exp_heading: "Commercial Experience",
     exp_dept: "// Department of AI Adaptation",
     exp_role_junior: "Junior Software Engineer",
-    exp_date_junior: "03.2025 — present · 5 months",
+    exp_date_junior: "01.2026 — present",
     exp_role_intern: "Software Engineering Intern",
-    exp_date_intern: "11.2024 — 01.2025 · 3 months",
+    exp_date_intern: "10.2025 — 12.2025 · 3 months",
     exp_desc: "Data processing using AI agents in automated workflows. Development of internal Python-based applications for AI-related tasks. Working with RAG systems and LLM integration across multiple internal platforms.",
     edu_heading: "Education",
     edu_degree: "Engineer's Degree in Computer Science",
@@ -1073,9 +1073,9 @@ const i18n = {
     exp_heading: "Doświadczenie Komercyjne",
     exp_dept: "// Dział Adaptacji AI",
     exp_role_junior: "Junior Software Engineer",
-    exp_date_junior: "03.2025 — obecnie · 5 miesięcy",
+    exp_date_junior: "01.2026 — obecnie",
     exp_role_intern: "Stażysta Software Engineer",
-    exp_date_intern: "11.2024 — 01.2025 · 3 miesiące",
+    exp_date_intern: "10.2025 — 12.2025 · 3 miesiące",
     exp_desc: "Przetwarzanie danych z wykorzystaniem agentów AI w zautomatyzowanych procesach. Tworzenie wewnętrznych aplikacji w Pythonie na potrzeby zadań związanych z AI. Praca z systemami RAG i integracją modeli LLM.",
     edu_heading: "Edukacja",
     edu_degree: "Tytuł Inżyniera Informatyki",
@@ -1117,9 +1117,9 @@ const i18n = {
     exp_heading: "Berufserfahrung",
     exp_dept: "// Abteilung für KI-Adaption",
     exp_role_junior: "Junior Software Engineer",
-    exp_date_junior: "03.2025 — heute · 5 Monate",
+    exp_date_junior: "01.2026 — heute",
     exp_role_intern: "Software Engineering Praktikant",
-    exp_date_intern: "11.2024 — 01.2025 · 3 Monate",
+    exp_date_intern: "10.2025 — 12.2025 · 3 Monate",
     exp_desc: "Datenverarbeitung mit KI-Agenten in automatisierten Workflows. Entwicklung interner Python-Anwendungen für KI-bezogene Aufgaben. Arbeit mit RAG-Systemen und LLM-Integration.",
     edu_heading: "Ausbildung",
     edu_degree: "Ingenieurabschluss in Informatik",
@@ -1167,6 +1167,47 @@ function setLang(lang) {
     btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
   });
 }
+
+function revealEmail(event, element) {
+  if (!element.textContent.includes('@')) {
+    event.preventDefault();
+    element.textContent = '✉ michal.sitek.it@gmail.com';
+    navigator.clipboard.writeText('michal.sitek.it@gmail.com').catch(err => {});
+  }
+}
+
+// Calculate dynamic junior duration
+(function calculateJuniorDuration() {
+  const startDate = new Date(2026, 0, 1); // 01.2026
+  const currentDate = new Date();
+  const months = (currentDate.getFullYear() - startDate.getFullYear()) * 12 + (currentDate.getMonth() - startDate.getMonth()) + 1;
+  
+  // EN
+  const enLabel = months === 1 ? 'month' : 'months';
+  i18n.en.exp_date_junior = `01.2026 — present · ${months} ${enLabel}`;
+  
+  // PL
+  let plMonthsStr = '';
+  if (months === 1) {
+    plMonthsStr = '1 miesiąc';
+  } else {
+    const lastDigit = months % 10;
+    const lastTwo = months % 100;
+    if (lastDigit >= 2 && lastDigit <= 4 && (lastTwo < 10 || lastTwo >= 20)) {
+      plMonthsStr = `${months} miesiące`;
+    } else {
+      plMonthsStr = `${months} miesięcy`;
+    }
+  }
+  i18n.pl.exp_date_junior = `01.2026 — obecnie · ${plMonthsStr}`;
+  
+  // DE
+  const deLabel = months === 1 ? 'Monat' : 'Monate';
+  i18n.de.exp_date_junior = `01.2026 — heute · ${months} ${deLabel}`;
+})();
+
+// Initialize localization on load
+setLang(currentLang);
 </script>
 </body>
 </html>
