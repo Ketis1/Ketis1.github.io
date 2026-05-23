@@ -98,7 +98,7 @@
   .nav-links a {
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.75rem;
-    color: var(--muted);
+    color: var(--text);
     text-decoration: none;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -405,36 +405,39 @@
   .edu-item {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-left: 3px solid var(--magenta);
+    border-left: 3px solid var(--cyan);
     padding: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .edu-degree {
     font-family: 'Orbitron', monospace;
     font-size: 1rem;
-    color: #fff;
+    color: var(--cyan);
     font-weight: 700;
     margin-bottom: 0.25rem;
   }
 
   .edu-school {
     font-size: 1rem;
-    color: var(--magenta);
-    margin-bottom: 0.25rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
   }
 
   .edu-spec {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-    margin-bottom: 0.25rem;
+    font-size: 0.7rem;
+    color: var(--magenta);
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
   }
 
   .edu-date {
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.72rem;
-    color: var(--cyan);
+    color: var(--muted);
+    letter-spacing: 0.08em;
   }
 
   /* SKILLS */
@@ -1013,7 +1016,7 @@
 
   <!-- EXPERIENCE -->
   <section id="experience">
-    <div class="section-label" data-i18n="nav_exp">Experience</div>
+    <div class="section-label" data-i18n="exp_label">// Career Timeline</div>
     <h2 data-i18n="exp_heading">Commercial Experience</h2>
 
     <div class="exp-item">
@@ -1037,7 +1040,7 @@
 
   <!-- EDUCATION -->
   <section id="education">
-    <div class="section-label" data-i18n="nav_edu">Education</div>
+    <div class="section-label" data-i18n="edu_label">// Academic Background</div>
     <h2 data-i18n="edu_heading">Education</h2>
 
     <div class="edu-item">
@@ -1050,14 +1053,14 @@
 
   <!-- SKILLS -->
   <section id="skills">
-    <div class="section-label" data-i18n="nav_skills">Skills</div>
+    <div class="section-label" data-i18n="skills_label">// Technical Arsenal</div>
     <h2 data-i18n="skills_heading">Skills &amp; Technologies</h2>
 
     <div class="skill-group">
       <div class="skill-group-title" data-i18n="skills_languages">Programming Languages</div>
       <div class="tags">
-        <span class="tag strong">Python</span>
-        <span class="tag strong">Java</span>
+        <span class="tag">Python</span>
+        <span class="tag">Java</span>
         <span class="tag">JavaScript</span>
         <span class="tag">TypeScript</span>
         <span class="tag">SQL</span>
@@ -1152,7 +1155,7 @@
 
   <!-- PROJECTS -->
   <section id="projects">
-    <div class="section-label" data-i18n="nav_proj">Projects</div>
+    <div class="section-label" data-i18n="proj_label">// Selected Work</div>
     <h2 data-i18n="proj_heading">Projects</h2>
 
     <div class="project-grid">
@@ -1253,7 +1256,7 @@
 
   <!-- LANGUAGES -->
   <section id="languages">
-    <div class="section-label" data-i18n="lang_label">Languages</div>
+    <div class="section-label" data-i18n="lang_label">// Communication</div>
     <h2 data-i18n="lang_heading">Languages</h2>
     <div class="lang-grid">
       <div class="lang-item">
@@ -1273,7 +1276,7 @@
 
   <!-- INTERESTS -->
   <section id="interests">
-    <div class="section-label" data-i18n="interests_label">Interests</div>
+    <div class="section-label" data-i18n="interests_label">// Curiosity Map</div>
     <h2 data-i18n="interests_heading">Interests</h2>
     <div class="interest-tags">
       <span class="interest-tag" data-i18n="int_backend">Backend Development</span>
@@ -1289,7 +1292,7 @@
 
   <!-- CONTACT -->
   <section id="contact">
-    <div class="section-label" data-i18n="nav_contact">Contact</div>
+    <div class="section-label" data-i18n="contact_label">// Say Hello</div>
     <h2 data-i18n="contact_heading">Get In Touch</h2>
     <div class="contact-grid">
       <div class="contact-item">
@@ -1530,6 +1533,10 @@ const i18n = {
   en: {
     nav_exp: "Experience", nav_edu: "Education", nav_skills: "Skills",
     nav_proj: "Projects", nav_contact: "Contact",
+    exp_label: "// Career Timeline", edu_label: "// Academic Background",
+    skills_label: "// Technical Arsenal", proj_label: "// Selected Work",
+    lang_label: "// Communication", interests_label: "// Curiosity Map",
+    contact_label: "// Say Hello",
     hero_title: "AI & BACKEND DEVELOPER",
     hero_bio: "I'm a Junior Software Engineer focused on backend development and AI. I work with Python, LLMs, and data pipelines, and I'm passionate about building things that actually matter to people. I'm also very curious about where AI and neuroscience meet, and excited about what humans and computers might be capable of together.",
     exp_heading: "Commercial Experience",
@@ -1560,10 +1567,10 @@ const i18n = {
     proj5_name: "Spotify Genre Classification & Popularity Prediction",
     proj5_desc: "End-to-end ML system predicting Spotify genre and popularity with full MLOps architecture. Features containerized deployment, experiment tracking, and a REST API.",
     proj5_link: "🔒 Private Repository",
-    lang_label: "Languages", lang_heading: "Languages",
+    lang_heading: "Languages",
     lang_pl: "Polish", lang_pl_level: "Native",
     lang_en: "English", lang_de: "German",
-    interests_label: "Interests", interests_heading: "Interests",
+    interests_heading: "Interests",
     int_backend: "Backend Development", int_ml: "Machine Learning",
     int_ai: "Artificial Intelligence", int_ds: "Data Science",
     int_neuro: "Computational Neuroscience", int_bio: "Bioinformatics",
@@ -1591,6 +1598,10 @@ const i18n = {
   pl: {
     nav_exp: "Doświadczenie", nav_edu: "Edukacja", nav_skills: "Umiejętności",
     nav_proj: "Projekty", nav_contact: "Kontakt",
+    exp_label: "// Ścieżka Kariery", edu_label: "// Wykształcenie Akademickie",
+    skills_label: "// Arsenał Techniczny", proj_label: "// Wybrane Prace",
+    lang_label: "// Komunikacja", interests_label: "// Mapa Ciekawości",
+    contact_label: "// Napisz",
     hero_title: "PROGRAMISTA AI & BACKEND",
     hero_bio: "Jestem Junior Software Engineerem skupionym na backendzie i sztucznej inteligencji. Pracuję z Pythonem, modelami językowymi i potokami danych. Pasjonuje mnie tworzenie rzeczy, które realnie pomagają ludziom. Bardzo ciekawi mnie, gdzie AI spotyka się z neurobiologią i co ludzie oraz komputery mogą razem osiągnąć.",
     exp_heading: "Doświadczenie Komercyjne",
@@ -1621,10 +1632,10 @@ const i18n = {
     proj5_name: "Klasyfikacja Gatunków i Przewidywanie Popularności Spotify",
     proj5_desc: "System ML przewidujący gatunek i popularność muzyki na Spotify, z pełną architekturą MLOps, konteneryzacją, śledzeniem eksperymentów i REST API.",
     proj5_link: "🔒 Prywatne repozytorium",
-    lang_label: "Języki", lang_heading: "Języki",
+    lang_heading: "Języki",
     lang_pl: "Polski", lang_pl_level: "Ojczysty",
     lang_en: "Angielski", lang_de: "Niemiecki",
-    interests_label: "Zainteresowania", interests_heading: "Zainteresowania",
+    interests_heading: "Zainteresowania",
     int_backend: "Backend Development", int_ml: "Machine Learning",
     int_ai: "Sztuczna Inteligencja", int_ds: "Data Science",
     int_neuro: "Neuronauka Obliczeniowa", int_bio: "Bioinformatyka",
@@ -1652,6 +1663,10 @@ const i18n = {
   de: {
     nav_exp: "Erfahrung", nav_edu: "Ausbildung", nav_skills: "Fähigkeiten",
     nav_proj: "Projekte", nav_contact: "Kontakt",
+    exp_label: "// Karriereweg", edu_label: "// Akademischer Hintergrund",
+    skills_label: "// Technisches Arsenal", proj_label: "// Ausgewählte Arbeiten",
+    lang_label: "// Kommunikation", interests_label: "// Neugier-Karte",
+    contact_label: "// Sag Hallo",
     hero_title: "AI & BACKEND ENTWICKLER",
     hero_bio: "Ich bin Junior Software Engineer mit Fokus auf Backend-Entwicklung und KI. Ich arbeite mit Python, LLMs und Datenpipelines und bin leidenschaftlich daran interessiert, Dinge zu bauen, die wirklich einen Unterschied machen. Mich fasziniert die Schnittstelle zwischen KI und Neurowissenschaften und was Menschen und Computer gemeinsam leisten können.",
     exp_heading: "Berufserfahrung",
@@ -1682,10 +1697,10 @@ const i18n = {
     proj5_name: "Spotify Genre-Klassifikation & Popularitätsvorhersage",
     proj5_desc: "End-to-End ML-System mit MLOps-Architektur, containerisierter Bereitstellung, Experiment-Tracking und REST API.",
     proj5_link: "🔒 Privates Repository",
-    lang_label: "Sprachen", lang_heading: "Sprachen",
+    lang_heading: "Sprachen",
     lang_pl: "Polnisch", lang_pl_level: "Muttersprache",
     lang_en: "Englisch", lang_de: "Deutsch",
-    interests_label: "Interessen", interests_heading: "Interessen",
+    interests_heading: "Interessen",
     int_backend: "Backend-Entwicklung", int_ml: "Machine Learning",
     int_ai: "Künstliche Intelligenz", int_ds: "Data Science",
     int_neuro: "Computational Neuroscience", int_bio: "Bioinformatik",
