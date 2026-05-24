@@ -1477,43 +1477,76 @@
 
     <div class="personal-tab-content" id="tab-movies">
       <div class="movie-grid">
-        <!-- Movie 1 -->
+        <div class="movie-card">
+          <div class="movie-header">
+            <span class="movie-title">Dunkirk</span>
+            <span class="movie-rating">10/10</span>
+          </div>
+          <p class="movie-desc" data-i18n="movie_dunkirk_desc">A relentless war thriller where tension never breaks and every perspective matters.</p>
+          <div class="movie-tags">
+            <span class="project-tag">War</span>
+            <span class="project-tag">Thriller</span>
+            <span class="project-tag">Nolan</span>
+          </div>
+        </div>
+        <div class="movie-card">
+          <div class="movie-header">
+            <span class="movie-title">Django</span>
+            <span class="movie-rating">10/10</span>
+          </div>
+          <p class="movie-desc" data-i18n="movie_django_desc">Stylish, brutal, and unforgettable from the first scene to the final payoff.</p>
+          <div class="movie-tags">
+            <span class="project-tag">Western</span>
+            <span class="project-tag">Drama</span>
+            <span class="project-tag">Revenge</span>
+          </div>
+        </div>
         <div class="movie-card">
           <div class="movie-header">
             <span class="movie-title">Interstellar</span>
-            <span class="movie-rating">★★★★★</span>
+            <span class="movie-rating">10/10</span>
           </div>
-          <p class="movie-desc" data-i18n="movie_interstellar_desc">A masterpiece where time dilation, astrophysics, and human emotion converge. Unbelievable soundtrack and visuals.</p>
+          <p class="movie-desc" data-i18n="movie_interstellar_desc">A masterpiece where time, space, and emotion collide on a cosmic scale.</p>
           <div class="movie-tags">
             <span class="project-tag">Sci-Fi</span>
             <span class="project-tag">Space</span>
             <span class="project-tag">Drama</span>
           </div>
         </div>
-        <!-- Movie 2 -->
         <div class="movie-card">
           <div class="movie-header">
-            <span class="movie-title">Blade Runner 2049</span>
-            <span class="movie-rating">★★★★★</span>
+            <span class="movie-title">Call Me by Your Name</span>
+            <span class="movie-rating">10/10</span>
           </div>
-          <p class="movie-desc" data-i18n="movie_bladerunner_desc">Visually magnificent cyber-noir epic exploring AI sentience, isolation, and identity. A major artistic influence.</p>
+          <p class="movie-desc" data-i18n="movie_callme_desc">Intimate, warm, and emotionally precise in a way that lingers long after the ending.</p>
           <div class="movie-tags">
-            <span class="project-tag">Sci-Fi</span>
-            <span class="project-tag">Cyberpunk</span>
-            <span class="project-tag">Noir</span>
+            <span class="project-tag">Romance</span>
+            <span class="project-tag">Drama</span>
+            <span class="project-tag">Coming-of-Age</span>
           </div>
         </div>
-        <!-- Movie 3 -->
         <div class="movie-card">
           <div class="movie-header">
-            <span class="movie-title">Inception</span>
-            <span class="movie-rating">★★★★☆</span>
+            <span class="movie-title">Fight Club</span>
+            <span class="movie-rating">10/10</span>
           </div>
-          <p class="movie-desc" data-i18n="movie_inception_desc">Brilliant dream-within-a-dream heuristic architecture. Captures human subconscious and memory dynamics perfectly.</p>
+          <p class="movie-desc" data-i18n="movie_fightclub_desc">Dark, chaotic, and iconic with a voice and energy that still hits hard.</p>
+          <div class="movie-tags">
+            <span class="project-tag">Psychological</span>
+            <span class="project-tag">Drama</span>
+            <span class="project-tag">Cult</span>
+          </div>
+        </div>
+        <div class="movie-card">
+          <div class="movie-header">
+            <span class="movie-title">Tenet</span>
+            <span class="movie-rating">10/10</span>
+          </div>
+          <p class="movie-desc" data-i18n="movie_tenet_desc">A dense sci-fi puzzle packed with momentum, scale, and pure cinematic ambition.</p>
           <div class="movie-tags">
             <span class="project-tag">Sci-Fi</span>
-            <span class="project-tag">Thriller</span>
-            <span class="project-tag">Mind-Bending</span>
+            <span class="project-tag">Action</span>
+            <span class="project-tag">Time</span>
           </div>
         </div>
       </div>
@@ -1587,9 +1620,12 @@ const i18n = {
     mountains_achieved_desc: "Highest points reached in Poland and beyond.",
     mountains_wishlist_title: "FUTURE ASCENTS", mountains_status_wishlist: "QUEUED",
     mountains_wishlist_desc: "Upcoming expeditions and training goals.",
-    movie_interstellar_desc: "A masterpiece where time dilation, astrophysics, and human emotion converge. Unbelievable soundtrack and visuals.",
-    movie_bladerunner_desc: "Visually magnificent cyber-noir epic exploring AI sentience, isolation, and identity. A major artistic influence.",
-    movie_inception_desc: "Brilliant dream-within-a-dream heuristic architecture. Captures human subconscious and memory dynamics perfectly.",
+    movie_dunkirk_desc: "A relentless war thriller where tension never breaks and every perspective matters.",
+    movie_django_desc: "Stylish, brutal, and unforgettable from the first scene to the final payoff.",
+    movie_interstellar_desc: "A masterpiece where time, space, and emotion collide on a cosmic scale.",
+    movie_callme_desc: "Intimate, warm, and emotionally precise in a way that lingers long after the ending.",
+    movie_fightclub_desc: "Dark, chaotic, and iconic with a voice and energy that still hits hard.",
+    movie_tenet_desc: "A dense sci-fi puzzle packed with momentum, scale, and pure cinematic ambition.",
     about_me_logs_title: "LIFE ENCODING",
     about_me_text_1: "Beyond tech, I am passionate about exploring the great outdoors and pushing physical limits. Mountain hiking gives me a perfect mental reset and fuels my focus for technical research.",
     about_me_text_2: "I also have a deep curiosity for psychology, computational neuroscience, and exploring how the human brain processes information compared to modern artificial networks.",
@@ -1653,9 +1689,12 @@ const i18n = {
     mountains_achieved_desc: "Najwyższe punkty osiągnięte w Polsce i poza nią.",
     mountains_wishlist_title: "PRZYSZŁE WEJŚCIA", mountains_status_wishlist: "W KOLEJCE",
     mountains_wishlist_desc: "Nadchodzące wyprawy i cele treningowe.",
-    movie_interstellar_desc: "Arcydzieło, w którym zbiegają się dylatacja czasu, astrofizyka i ludzkie emocje. Niewiarygodna ścieżka dźwiękowa i efekty wizualne.",
-    movie_bladerunner_desc: "Wspaniały wizualnie epos cyber-noir badający świadomość AI, izolację i tożsamość. Główna inspiracja artystyczna.",
-    movie_inception_desc: "Genialna heurystyczna architektura snu w snach. Idealnie oddaje dynamikę ludzkiej podświadomości i pamięci.",
+    movie_dunkirk_desc: "Bezlitosny thriller wojenny, w którym napięcie nie odpuszcza ani na chwilę, a każda perspektywa ma znaczenie.",
+    movie_django_desc: "Stylowy, brutalny i niezapomniany od pierwszej sceny aż po finał.",
+    movie_interstellar_desc: "Arcydzieło, w którym czas, kosmos i emocje zderzają się w epickiej skali.",
+    movie_callme_desc: "Intymny, ciepły i emocjonalnie precyzyjny w sposób, który zostaje w głowie długo po seansie.",
+    movie_fightclub_desc: "Mroczny, chaotyczny i ikoniczny film z energią, która nadal uderza z pełną siłą.",
+    movie_tenet_desc: "Gęsta zagadka science fiction pełna rozmachu, tempa i czystej filmowej ambicji.",
     about_me_logs_title: "KODOWANIE ŻYCIA",
     about_me_text_1: "Poza technologią pasjonuję się odkrywaniem natury i przesuwaniem barier fizycznych. Wędrówki górskie zapewniają mi doskonały reset psychiczny i napędzają moją koncentrację na badaniach technicznych.",
     about_me_text_2: "Mam także głęboką ciekaowość psychologii, neuronauki obliczeniowej i badania tego, jak ludzki mózg przetwarza informacje w porównaniu do współczesnych sztucznych sieci.",
@@ -1719,9 +1758,12 @@ const i18n = {
     mountains_achieved_desc: "Die höchsten erreichten Punkte in Polen und darüber hinaus.",
     mountains_wishlist_title: "ZUKÜNFTIGE AUFSTIEGE", mountains_status_wishlist: "GEPLANT",
     mountains_wishlist_desc: "Anstehende Expeditionen und Trainingsziele.",
-    movie_interstellar_desc: "Ein Meisterwerk, in dem Zeitdilatation, Astrophysik und menschliche Gefühle verschmelzen. Unglaublicher Soundtrack und visuelle Effekte.",
-    movie_bladerunner_desc: "Ein visuell grandioses Cyber-Noir-Epos, das KI-Empfindungsvermögen, Isolation und Identität erforscht. Ein wichtiger künstlerischer Einfluss.",
-    movie_inception_desc: "Geniale Traum-im-Traum-Heuristik-Architektur. Erfasst das menschliche Unterbewusstsein und die Gedächtnisdynamik perfekt.",
+    movie_dunkirk_desc: "Ein gnadenloser Kriegs-Thriller, in dem die Spannung nie nachlässt und jede Perspektive zählt.",
+    movie_django_desc: "Stilvoll, brutal und unvergesslich von der ersten Szene bis zum letzten Moment.",
+    movie_interstellar_desc: "Ein Meisterwerk, in dem Zeit, Weltraum und Gefühle auf kosmischer Ebene aufeinandertreffen.",
+    movie_callme_desc: "Intim, warm und emotional präzise auf eine Weise, die noch lange nach dem Ende nachwirkt.",
+    movie_fightclub_desc: "Dunkel, chaotisch und ikonisch, mit einer Stimme und Energie, die bis heute hart trifft.",
+    movie_tenet_desc: "Ein dichtes Sci-Fi-Rätsel voller Tempo, Größe und purer filmischer Ambition.",
     about_me_logs_title: "KODIERUNG DES LEBENS",
     about_me_text_1: "Neben der Technologie bin ich leidenschaftlich gerne in der Natur unterwegs und verschiebe körperliche Grenzen. Bergwandern gibt mir einen perfekten mentalen Reset und fördert meine Konzentration auf die technische Forschung.",
     about_me_text_2: "Ich hege auch eine tiefe Neugierde für Psychologie, Computational Neuroscience und die Erforschung dessen, wie das menschliche Gehirn Informationen im Vergleich zu modernen künstlichen Netzwerken verarbeitet.",
