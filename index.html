@@ -713,6 +713,7 @@
   .personal-tabs {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
     margin-bottom: 2.5rem;
     border-bottom: 1px solid var(--border);
     padding-bottom: 1rem;
@@ -910,6 +911,76 @@
     gap: 0.4rem;
   }
 
+  /* Game Cards */
+  .game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .game-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--cyan);
+    padding: 1rem 1.1rem;
+    transition: border-color 0.25s, box-shadow 0.25s;
+  }
+
+  .game-card:hover {
+    border-color: rgba(0,245,255,0.3);
+    box-shadow: 0 0 25px rgba(0,245,255,0.04);
+  }
+
+  .game-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .game-rank {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.85rem;
+    color: var(--cyan);
+    letter-spacing: 0.08em;
+  }
+
+  .game-name {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .game-hours-toggle {
+    width: 100%;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 0.8rem 1rem;
+    text-align: left;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+
+  .game-hours-toggle:hover {
+    color: var(--cyan);
+    border-color: rgba(0,245,255,0.3);
+    background: var(--cyan-dim);
+  }
+
+  .game-hours-toggle.revealed {
+    color: #fff;
+    border-color: var(--cyan);
+    box-shadow: var(--glow-cyan);
+  }
+
   /* About Me Text */
   .about-me-text {
     display: flex;
@@ -980,6 +1051,7 @@
     <li><a href="#about-me" onclick="switchPersonalTab('about-me')" data-i18n="nav_about_me">About Me</a></li>
     <li><a href="#mountains" onclick="switchPersonalTab('mountains')" data-i18n="nav_mountains">Mountains</a></li>
     <li><a href="#movies" onclick="switchPersonalTab('movies')" data-i18n="nav_movies">Movies</a></li>
+    <li><a href="#games" onclick="switchPersonalTab('games')" data-i18n="nav_games">Games</a></li>
   </ul>
   <div class="nav-controls">
     <div class="mode-switcher">
@@ -1335,6 +1407,9 @@
       <button class="personal-tab" onclick="switchPersonalTab('movies')" data-personal-tab="movies">
         <span data-i18n="personal_tab_movies">Movies</span>
       </button>
+      <button class="personal-tab" onclick="switchPersonalTab('games')" data-personal-tab="games">
+        <span data-i18n="personal_tab_games">Games</span>
+      </button>
     </div>
 
     <!-- Personal Tab Contents -->
@@ -1552,6 +1627,60 @@
       </div>
     </div>
 
+    <div class="personal-tab-content" id="tab-games">
+      <div class="personal-grid">
+        <div class="personal-card wide">
+          <div class="personal-card-header">
+            <h3 data-i18n="games_title">TOP 5 MOST PLAYED GAMES</h3>
+            <a href="https://steamcommunity.com/id/ketis1/" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="games_steam_link">⌥ Steam Profile</a>
+          </div>
+          <p class="personal-card-desc" data-i18n="games_desc">Ranking based on total playtime. Click a field below to reveal the hours.</p>
+          <div class="game-grid">
+            <div class="game-card">
+              <div class="game-card-header">
+                <span class="game-rank">#1</span>
+                <span class="project-tag">25.5%</span>
+              </div>
+              <div class="game-name">Counter-Strike 2</div>
+              <button class="game-hours-toggle" type="button" data-hours="2234h (25.5%)" data-state="hidden" aria-expanded="false" onclick="toggleGameHours(this)"></button>
+            </div>
+            <div class="game-card">
+              <div class="game-card-header">
+                <span class="game-rank">#2</span>
+                <span class="project-tag">24.3%</span>
+              </div>
+              <div class="game-name">PUBG: BATTLEGROUNDS</div>
+              <button class="game-hours-toggle" type="button" data-hours="2126h (24.3%)" data-state="hidden" aria-expanded="false" onclick="toggleGameHours(this)"></button>
+            </div>
+            <div class="game-card">
+              <div class="game-card-header">
+                <span class="game-rank">#3</span>
+                <span class="project-tag">17.5%</span>
+              </div>
+              <div class="game-name">Grand Theft Auto V Legacy</div>
+              <button class="game-hours-toggle" type="button" data-hours="1531h (17.5%)" data-state="hidden" aria-expanded="false" onclick="toggleGameHours(this)"></button>
+            </div>
+            <div class="game-card">
+              <div class="game-card-header">
+                <span class="game-rank">#4</span>
+                <span class="project-tag">6.2%</span>
+              </div>
+              <div class="game-name">Rust</div>
+              <button class="game-hours-toggle" type="button" data-hours="540h (6.2%)" data-state="hidden" aria-expanded="false" onclick="toggleGameHours(this)"></button>
+            </div>
+            <div class="game-card">
+              <div class="game-card-header">
+                <span class="game-rank">#5</span>
+                <span class="project-tag">3.7%</span>
+              </div>
+              <div class="game-name">Cyberpunk 2077</div>
+              <button class="game-hours-toggle" type="button" data-hours="322h (3.7%)" data-state="hidden" aria-expanded="false" onclick="toggleGameHours(this)"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
   </div> <!-- END OF personal-view -->
 
@@ -1612,10 +1741,10 @@ const i18n = {
     contact_heading: "Get In Touch", contact_location: "Location", contact_city: "Warsaw & Berlin",
     footer_text: "</MICHAŁ_SITEK> · Built with HTML, CSS & JavaScript · Hosted on GitHub Pages",
     mode_prof: "Professional", mode_pers: "Personal",
-    nav_mountains: "Mountains", nav_movies: "Movies", nav_about_me: "About Me",
+    nav_mountains: "Mountains", nav_movies: "Movies", nav_games: "Games", nav_about_me: "About Me",
     personal_logs_label: "Personal Logs", personal_logs_heading: "OFF-DUTY DATABASE",
     personal_logs_bio: "Exploring life beyond compilation and AI architectures. Log files for physical ascents, artistic inspirations, and off-duty activities.",
-    personal_tab_mountains: "Mountains", personal_tab_movies: "Movies", personal_tab_about: "About Me",
+    personal_tab_mountains: "Mountains", personal_tab_movies: "Movies", personal_tab_games: "Games", personal_tab_about: "About Me",
     mountains_achieved_title: "CONQUERED PEAKS", mountains_status_conquered: "VERIFIED",
     mountains_achieved_desc: "Highest points reached in Poland and beyond.",
     mountains_wishlist_title: "FUTURE ASCENTS", mountains_status_wishlist: "QUEUED",
@@ -1626,6 +1755,10 @@ const i18n = {
     movie_callme_desc: "Intimate, warm, and emotionally precise in a way that lingers long after the ending.",
     movie_fightclub_desc: "Dark, chaotic, and iconic with a voice and energy that still hits hard.",
     movie_tenet_desc: "A dense sci-fi puzzle packed with momentum, scale, and pure cinematic ambition.",
+    games_title: "TOP 5 MOST PLAYED GAMES",
+    games_desc: "Ranking based on total playtime. Click a field below to reveal the hours.",
+    games_steam_link: "⌥ Steam Profile",
+    game_reveal_hours: "Reveal hours",
     about_me_logs_title: "LIFE ENCODING",
     about_me_text_1: "Beyond tech, I am passionate about exploring the great outdoors and pushing physical limits. Mountain hiking gives me a perfect mental reset and fuels my focus for technical research.",
     about_me_text_2: "I also have a deep curiosity for psychology, computational neuroscience, and exploring how the human brain processes information compared to modern artificial networks.",
@@ -1681,10 +1814,10 @@ const i18n = {
     contact_heading: "Kontakt", contact_location: "Lokalizacja", contact_city: "Warszawa & Berlin",
     footer_text: "</MICHAŁ_SITEK> · Zbudowane z HTML, CSS i JavaScript · Hostowane na GitHub Pages",
     mode_prof: "Profesjonalne", mode_pers: "Prywatne",
-    nav_mountains: "Góry", nav_movies: "Filmy", nav_about_me: "O mnie",
+    nav_mountains: "Góry", nav_movies: "Filmy", nav_games: "Gry", nav_about_me: "O mnie",
     personal_logs_label: "Rejestry Osobiste", personal_logs_heading: "BAZA DANYCH PO SŁUŻBIE",
     personal_logs_bio: "Odkrywanie życia poza kompilacją i architekturami AI. Logi z fizycznych podejść, artystycznych inspiracji i aktywności poza pracą.",
-    personal_tab_mountains: "Góry", personal_tab_movies: "Filmy", personal_tab_about: "O mnie",
+    personal_tab_mountains: "Góry", personal_tab_movies: "Filmy", personal_tab_games: "Gry", personal_tab_about: "O mnie",
     mountains_achieved_title: "ZDOBYTE SZCZYTY", mountains_status_conquered: "ZWERYFIKOWANO",
     mountains_achieved_desc: "Najwyższe punkty osiągnięte w Polsce i poza nią.",
     mountains_wishlist_title: "PRZYSZŁE WEJŚCIA", mountains_status_wishlist: "W KOLEJCE",
@@ -1695,6 +1828,10 @@ const i18n = {
     movie_callme_desc: "Intymny, ciepły i emocjonalnie precyzyjny w sposób, który zostaje w głowie długo po seansie.",
     movie_fightclub_desc: "Mroczny, chaotyczny i ikoniczny film z energią, która nadal uderza z pełną siłą.",
     movie_tenet_desc: "Gęsta zagadka science fiction pełna rozmachu, tempa i czystej filmowej ambicji.",
+    games_title: "TOP 5 NAJCZĘŚCIEJ OGRYWANYCH GIER",
+    games_desc: "Ranking według łącznego czasu gry. Kliknij poniższe pole, aby odsłonić liczbę godzin.",
+    games_steam_link: "⌥ Profil Steam",
+    game_reveal_hours: "Pokaż godziny",
     about_me_logs_title: "KODOWANIE ŻYCIA",
     about_me_text_1: "Poza technologią pasjonuję się odkrywaniem natury i przesuwaniem barier fizycznych. Wędrówki górskie zapewniają mi doskonały reset psychiczny i napędzają moją koncentrację na badaniach technicznych.",
     about_me_text_2: "Mam także głęboką ciekaowość psychologii, neuronauki obliczeniowej i badania tego, jak ludzki mózg przetwarza informacje w porównaniu do współczesnych sztucznych sieci.",
@@ -1750,10 +1887,10 @@ const i18n = {
     contact_heading: "Kontakt aufnehmen", contact_location: "Standort", contact_city: "Warschau & Berlin",
     footer_text: "</MICHAŁ_SITEK> · Erstellt mit HTML, CSS & JavaScript · Gehostet auf GitHub Pages",
     mode_prof: "Beruflich", mode_pers: "Persönlich",
-    nav_mountains: "Berge", nav_movies: "Filme", nav_about_me: "Über mich",
+    nav_mountains: "Berge", nav_movies: "Filme", nav_games: "Spiele", nav_about_me: "Über mich",
     personal_logs_label: "Persönliche Protokolle", personal_logs_heading: "OFF-DUTY DATENBANK",
     personal_logs_bio: "Erforschung des Lebens jenseits von Kompilierung und KI-Architekturen. Protokolldateien für physische Aufstiege, künstlerische Inspirationen und Freizeitaktivitäten.",
-    personal_tab_mountains: "Berge", personal_tab_movies: "Filme", personal_tab_about: "Über mich",
+    personal_tab_mountains: "Berge", personal_tab_movies: "Filme", personal_tab_games: "Spiele", personal_tab_about: "Über mich",
     mountains_achieved_title: "BEZWUNGENE GIPFEL", mountains_status_conquered: "VERIFIZIERT",
     mountains_achieved_desc: "Die höchsten erreichten Punkte in Polen und darüber hinaus.",
     mountains_wishlist_title: "ZUKÜNFTIGE AUFSTIEGE", mountains_status_wishlist: "GEPLANT",
@@ -1764,6 +1901,10 @@ const i18n = {
     movie_callme_desc: "Intim, warm und emotional präzise auf eine Weise, die noch lange nach dem Ende nachwirkt.",
     movie_fightclub_desc: "Dunkel, chaotisch und ikonisch, mit einer Stimme und Energie, die bis heute hart trifft.",
     movie_tenet_desc: "Ein dichtes Sci-Fi-Rätsel voller Tempo, Größe und purer filmischer Ambition.",
+    games_title: "TOP 5 MEISTGESPIELTE SPIELE",
+    games_desc: "Ranking nach gesamter Spielzeit. Klicke unten auf ein Feld, um die Stunden einzublenden.",
+    games_steam_link: "⌥ Steam-Profil",
+    game_reveal_hours: "Stunden anzeigen",
     about_me_logs_title: "KODIERUNG DES LEBENS",
     about_me_text_1: "Neben der Technologie bin ich leidenschaftlich gerne in der Natur unterwegs und verschiebe körperliche Grenzen. Bergwandern gibt mir einen perfekten mentalen Reset und fördert meine Konzentration auf die technische Forschung.",
     about_me_text_2: "Ich hege auch eine tiefe Neugierde für Psychologie, Computational Neuroscience und die Erforschung dessen, wie das menschliche Gehirn Informationen im Vergleich zu modernen künstlichen Netzwerken verarbeitet.",
@@ -1780,6 +1921,7 @@ function setLang(lang) {
     const key = el.getAttribute('data-i18n');
     if (i18n[lang][key]) el.textContent = i18n[lang][key];
   });
+  updateGameHourLabels();
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
   });
@@ -1825,6 +1967,21 @@ function switchPersonalTab(tabId) {
   });
   document.querySelectorAll('.personal-tab-content').forEach(content => {
     content.classList.toggle('active', content.id === `tab-${tabId}`);
+  });
+}
+
+function toggleGameHours(button) {
+  const isRevealed = button.getAttribute('data-state') === 'revealed';
+  button.setAttribute('data-state', isRevealed ? 'hidden' : 'revealed');
+  button.setAttribute('aria-expanded', String(!isRevealed));
+  updateGameHourLabels();
+}
+
+function updateGameHourLabels() {
+  document.querySelectorAll('.game-hours-toggle').forEach(button => {
+    const isRevealed = button.getAttribute('data-state') === 'revealed';
+    button.classList.toggle('revealed', isRevealed);
+    button.textContent = isRevealed ? button.getAttribute('data-hours') : i18n[currentLang].game_reveal_hours;
   });
 }
 
