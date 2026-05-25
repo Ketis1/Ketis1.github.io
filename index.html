@@ -981,6 +981,52 @@
     box-shadow: var(--glow-cyan);
   }
 
+  .easter-egg-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5, 8, 12, 0.85);
+    z-index: 2000;
+    padding: 1rem;
+  }
+
+  .easter-egg-overlay.active {
+    display: flex;
+  }
+
+  .easter-egg-modal {
+    position: relative;
+    max-width: min(90vw, 640px);
+    max-height: 85vh;
+  }
+
+  .easter-egg-modal img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 85vh;
+    border: 2px solid rgba(0, 255, 255, 0.55);
+    border-radius: 12px;
+    box-shadow: 0 0 28px rgba(0, 255, 255, 0.3);
+  }
+
+  .easter-egg-close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    color: #fff;
+    background: rgba(12, 18, 26, 0.95);
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+
   /* About Me Text */
   .about-me-text {
     display: flex;
@@ -1083,7 +1129,7 @@
     <!-- HERO -->
   <section id="hero">
     <div class="hero-tag">&gt; INITIALIZING PROFILE...</div>
-    <h1 class="hero-name">
+    <h1 class="hero-name" id="hero-name-trigger">
       <span class="glitch" data-text="MICHAŁ">MICHAŁ</span><br>
       <span class="glitch" data-text="SITEK">SITEK</span>
     </h1>
@@ -1722,6 +1768,13 @@
 
 </main>
 
+<div class="easter-egg-overlay" id="easter-egg-overlay" aria-hidden="true">
+  <div class="easter-egg-modal">
+    <button class="easter-egg-close" id="easter-egg-close" type="button" aria-label="Close easter egg">×</button>
+    <img id="easter-egg-image" src="" alt="Programming book easter egg">
+  </div>
+</div>
+
 <footer>
   <span data-i18n="footer_text">Designed &amp; developed by Michał Sitek &copy; 2026</span>
 </footer>
@@ -2030,6 +2083,57 @@ function updateGameHourLabels() {
     const isRevealed = button.getAttribute('data-state') === 'revealed';
     button.classList.toggle('revealed', isRevealed);
     button.textContent = isRevealed ? button.getAttribute('data-hours') : i18n[currentLang].game_reveal_hours;
+  });
+}
+
+const easterEggImages = [
+  'assets/img/programming_books/Kei_Shirogane_crying_CPP.png',
+  'assets/img/programming_books/Sakura_Nene_LDD3.png',
+  'assets/img/programming_books/Emilia_Holding_Intro_to_Python.jpg'
+];
+let easterEggClickCount = 0;
+const easterEggClickTarget = 5;
+
+function showEasterEgg() {
+  const overlay = document.getElementById('easter-egg-overlay');
+  const image = document.getElementById('easter-egg-image');
+  if (!overlay || !image) return;
+  const randomIndex = Math.floor(Math.random() * easterEggImages.length);
+  image.src = easterEggImages[randomIndex];
+  overlay.classList.add('active');
+  overlay.setAttribute('aria-hidden', 'false');
+}
+
+function hideEasterEgg() {
+  const overlay = document.getElementById('easter-egg-overlay');
+  if (!overlay) return;
+  overlay.classList.remove('active');
+  overlay.setAttribute('aria-hidden', 'true');
+}
+
+const heroNameTrigger = document.getElementById('hero-name-trigger');
+const easterEggOverlay = document.getElementById('easter-egg-overlay');
+const easterEggClose = document.getElementById('easter-egg-close');
+
+if (heroNameTrigger) {
+  heroNameTrigger.addEventListener('click', () => {
+    easterEggClickCount += 1;
+    if (easterEggClickCount >= easterEggClickTarget) {
+      easterEggClickCount = 0;
+      showEasterEgg();
+    }
+  });
+}
+
+if (easterEggClose) {
+  easterEggClose.addEventListener('click', hideEasterEgg);
+}
+
+if (easterEggOverlay) {
+  easterEggOverlay.addEventListener('click', (event) => {
+    if (event.target === easterEggOverlay) {
+      hideEasterEgg();
+    }
   });
 }
 
