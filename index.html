@@ -86,7 +86,11 @@
     color: var(--cyan);
     letter-spacing: 0.15em;
     text-shadow: var(--glow-cyan);
+    cursor: pointer;
+    transition: opacity 0.2s;
   }
+
+  .nav-logo:hover { opacity: 0.82; }
 
   .nav-links {
     display: flex;
@@ -199,6 +203,7 @@
     color: #fff;
     margin-bottom: 0.5rem;
     position: relative;
+    cursor: pointer;
   }
 
   .hero-name .glitch {
@@ -1096,7 +1101,7 @@
 <body>
 
 <nav>
-  <div class="nav-logo">&lt;MICHAŁ_SITEK/&gt;</div>
+  <div class="nav-logo" id="nav-logo-trigger">&lt;MICHAŁ_SITEK/&gt;</div>
   <ul class="nav-links" id="prof-nav-links">
     <li><a href="#experience" data-i18n="nav_exp">Experience</a></li>
     <li><a href="#education" data-i18n="nav_edu">Education</a></li>
@@ -2112,17 +2117,24 @@ function hideEasterEgg() {
 }
 
 const heroNameTrigger = document.getElementById('hero-name-trigger');
+const navLogoTrigger = document.getElementById('nav-logo-trigger');
 const easterEggOverlay = document.getElementById('easter-egg-overlay');
 const easterEggClose = document.getElementById('easter-egg-close');
 
+function handleEasterEggTriggerClick() {
+  easterEggClickCount += 1;
+  if (easterEggClickCount >= easterEggClickTarget) {
+    easterEggClickCount = 0;
+    showEasterEgg();
+  }
+}
+
 if (heroNameTrigger) {
-  heroNameTrigger.addEventListener('click', () => {
-    easterEggClickCount += 1;
-    if (easterEggClickCount >= easterEggClickTarget) {
-      easterEggClickCount = 0;
-      showEasterEgg();
-    }
-  });
+  heroNameTrigger.addEventListener('click', handleEasterEggTriggerClick);
+}
+
+if (navLogoTrigger) {
+  navLogoTrigger.addEventListener('click', handleEasterEggTriggerClick);
 }
 
 if (easterEggClose) {
