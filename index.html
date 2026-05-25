@@ -1063,6 +1063,7 @@
     <li><a href="#mountains" onclick="switchPersonalTab('mountains')" data-i18n="nav_mountains">Mountains</a></li>
     <li><a href="#movies" onclick="switchPersonalTab('movies')" data-i18n="nav_movies">Movies</a></li>
     <li><a href="#games" onclick="switchPersonalTab('games')" data-i18n="nav_games">Games</a></li>
+    <li><a href="#streaming" onclick="switchPersonalTab('streaming')" data-i18n="nav_streaming">Streaming</a></li>
   </ul>
   <div class="nav-controls">
     <div class="mode-switcher">
@@ -1421,6 +1422,9 @@
       <button class="personal-tab" onclick="switchPersonalTab('games')" data-personal-tab="games">
         <span data-i18n="personal_tab_games">Games</span>
       </button>
+      <button class="personal-tab" onclick="switchPersonalTab('streaming')" data-personal-tab="streaming">
+        <span data-i18n="personal_tab_streaming">Streaming</span>
+      </button>
     </div>
 
     <!-- Personal Tab Contents -->
@@ -1688,6 +1692,32 @@
     </div>
 
 
+    <div class="personal-tab-content" id="tab-streaming">
+      <div class="personal-grid">
+        <div class="personal-card wide">
+          <div class="personal-card-header">
+            <h3 data-i18n="streaming_title">LIVE ON TWITCH</h3>
+            <a href="https://www.twitch.tv/ketis1_" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="streaming_channel_link">⌥ Twitch Channel</a>
+          </div>
+          <p class="personal-card-desc" data-i18n="streaming_desc">I stream a variety of games — from competitive shooters like CS2 and PUBG to open-world adventures. My streams are a mix of serious ranked grind, fun challenges, and just chilling with the chat. Come hang out live or catch the VODs on my channel.</p>
+          <div class="twitch-embed-wrapper">
+            <iframe
+              id="twitch-embed"
+              src="https://player.twitch.tv/?channel=ketis1_&parent=ketis1.github.io"
+              height="480"
+              width="100%"
+              allowfullscreen
+              style="border:none; border-radius:8px; display:block; margin-top:1.2rem;">
+            </iframe>
+          </div>
+          <div style="margin-top:1.2rem; text-align:center;">
+            <a href="https://www.twitch.tv/ketis1_" target="_blank" rel="noopener noreferrer" class="project-link" style="font-size:1rem; padding:0.6rem 1.4rem;" data-i18n="streaming_visit_btn">▶ Watch on Twitch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </div> <!-- END OF personal-view -->
 
 </main>
@@ -1747,10 +1777,10 @@ const i18n = {
     contact_heading: "Get In Touch", contact_location: "Location", contact_city: "Warsaw & Berlin",
     footer_text: "Designed & developed by Michał Sitek © 2026",
     mode_prof: "Professional", mode_pers: "Personal",
-    nav_mountains: "Mountains", nav_movies: "Movies", nav_games: "Games", nav_about_me: "About Me",
+    nav_mountains: "Mountains", nav_movies: "Movies", nav_games: "Games", nav_about_me: "About Me", nav_streaming: "Streaming",
     personal_logs_label: "Personal Logs", personal_logs_heading: "OFF-DUTY DATABASE",
     personal_logs_bio: "Exploring life beyond compilation and AI architectures. Log files for physical ascents, artistic inspirations, and off-duty activities.",
-    personal_tab_mountains: "Mountains", personal_tab_movies: "Movies", personal_tab_games: "Games", personal_tab_about: "About Me",
+    personal_tab_mountains: "Mountains", personal_tab_movies: "Movies", personal_tab_games: "Games", personal_tab_about: "About Me", personal_tab_streaming: "Streaming",
     mountains_achieved_title: "CONQUERED PEAKS", mountains_status_conquered: "VERIFIED",
     mountains_achieved_desc: "Highest points reached in Poland and beyond.",
     mountains_wishlist_title: "FUTURE ASCENTS", mountains_status_wishlist: "QUEUED",
@@ -1765,6 +1795,10 @@ const i18n = {
     games_desc: "Ranking based on total playtime. Click a field below to reveal the hours.",
     games_steam_link: "⌥ Steam Profile",
     game_reveal_hours: "Reveal hours",
+    streaming_title: "LIVE ON TWITCH",
+    streaming_desc: "I stream a variety of games — from competitive shooters like CS2 and PUBG to open-world adventures. My streams are a mix of serious ranked grind, fun challenges, and just chilling with the chat. Come hang out live or catch the VODs on my channel.",
+    streaming_channel_link: "⌥ Twitch Channel",
+    streaming_visit_btn: "▶ Watch on Twitch",
     about_me_logs_title: "LIFE ENCODING",
     about_me_text_1: "Beyond tech, I am passionate about exploring the great outdoors and pushing physical limits. Mountain hiking gives me a perfect mental reset and fuels my focus for technical research.",
     about_me_text_2: "I also have a deep curiosity for psychology, computational neuroscience, and exploring how the human brain processes information compared to modern artificial networks.",
@@ -1820,10 +1854,10 @@ const i18n = {
     contact_heading: "Kontakt", contact_location: "Lokalizacja", contact_city: "Warszawa & Berlin",
     footer_text: "Designed & developed by Michał Sitek © 2026",
     mode_prof: "Profesjonalne", mode_pers: "Prywatne",
-    nav_mountains: "Góry", nav_movies: "Filmy", nav_games: "Gry", nav_about_me: "O mnie",
+    nav_mountains: "Góry", nav_movies: "Filmy", nav_games: "Gry", nav_about_me: "O mnie", nav_streaming: "Streaming",
     personal_logs_label: "Rejestry Osobiste", personal_logs_heading: "BAZA DANYCH PO SŁUŻBIE",
     personal_logs_bio: "Odkrywanie życia poza kompilacją i architekturami AI. Logi z fizycznych podejść, artystycznych inspiracji i aktywności poza pracą.",
-    personal_tab_mountains: "Góry", personal_tab_movies: "Filmy", personal_tab_games: "Gry", personal_tab_about: "O mnie",
+    personal_tab_mountains: "Góry", personal_tab_movies: "Filmy", personal_tab_games: "Gry", personal_tab_about: "O mnie", personal_tab_streaming: "Streaming",
     mountains_achieved_title: "ZDOBYTE SZCZYTY", mountains_status_conquered: "ZWERYFIKOWANO",
     mountains_achieved_desc: "Najwyższe punkty osiągnięte w Polsce i poza nią.",
     mountains_wishlist_title: "PRZYSZŁE WEJŚCIA", mountains_status_wishlist: "W KOLEJCE",
@@ -1838,6 +1872,10 @@ const i18n = {
     games_desc: "Ranking według łącznego czasu gry. Kliknij poniższe pole, aby odsłonić liczbę godzin.",
     games_steam_link: "⌥ Profil Steam",
     game_reveal_hours: "Pokaż godziny",
+    streaming_title: "NA ŻYWO NA TWITCHU",
+    streaming_desc: "Streamuję różne gry — od shooterów kompetytywnych jak CS2 i PUBG po przygody w otwartym świecie. Moje streamy to mieszanka poważnego grindowania rankingowego, zabawnych wyzwań i luźnego spędzania czasu z chatem. Wpadaj na żywo lub obejrzyj VODy na moim kanale.",
+    streaming_channel_link: "⌥ Kanał Twitch",
+    streaming_visit_btn: "▶ Oglądaj na Twitchu",
     about_me_logs_title: "KODOWANIE ŻYCIA",
     about_me_text_1: "Poza technologią pasjonuję się odkrywaniem natury i przesuwaniem barier fizycznych. Wędrówki górskie zapewniają mi doskonały reset psychiczny i napędzają moją koncentrację na badaniach technicznych.",
     about_me_text_2: "Mam także głęboką ciekaowość psychologii, neuronauki obliczeniowej i badania tego, jak ludzki mózg przetwarza informacje w porównaniu do współczesnych sztucznych sieci.",
@@ -1893,10 +1931,10 @@ const i18n = {
     contact_heading: "Kontakt aufnehmen", contact_location: "Standort", contact_city: "Warschau & Berlin",
     footer_text: "Designed & developed by Michał Sitek © 2026",
     mode_prof: "Beruflich", mode_pers: "Persönlich",
-    nav_mountains: "Berge", nav_movies: "Filme", nav_games: "Spiele", nav_about_me: "Über mich",
+    nav_mountains: "Berge", nav_movies: "Filme", nav_games: "Spiele", nav_about_me: "Über mich", nav_streaming: "Streaming",
     personal_logs_label: "Persönliche Protokolle", personal_logs_heading: "OFF-DUTY DATENBANK",
     personal_logs_bio: "Erforschung des Lebens jenseits von Kompilierung und KI-Architekturen. Protokolldateien für physische Aufstiege, künstlerische Inspirationen und Freizeitaktivitäten.",
-    personal_tab_mountains: "Berge", personal_tab_movies: "Filme", personal_tab_games: "Spiele", personal_tab_about: "Über mich",
+    personal_tab_mountains: "Berge", personal_tab_movies: "Filme", personal_tab_games: "Spiele", personal_tab_about: "Über mich", personal_tab_streaming: "Streaming",
     mountains_achieved_title: "BEZWUNGENE GIPFEL", mountains_status_conquered: "VERIFIZIERT",
     mountains_achieved_desc: "Die höchsten erreichten Punkte in Polen und darüber hinaus.",
     mountains_wishlist_title: "ZUKÜNFTIGE AUFSTIEGE", mountains_status_wishlist: "GEPLANT",
@@ -1911,6 +1949,10 @@ const i18n = {
     games_desc: "Ranking nach gesamter Spielzeit. Klicke unten auf ein Feld, um die Stunden einzublenden.",
     games_steam_link: "⌥ Steam-Profil",
     game_reveal_hours: "Stunden anzeigen",
+    streaming_title: "LIVE AUF TWITCH",
+    streaming_desc: "Ich streame verschiedene Spiele — von kompetitiven Shootern wie CS2 und PUBG bis hin zu Open-World-Abenteuern. Meine Streams sind eine Mischung aus ernstem Ranked-Grind, lustigen Challenges und entspanntem Zeit verbringen mit dem Chat. Schau live vorbei oder sieh dir die VODs auf meinem Kanal an.",
+    streaming_channel_link: "⌥ Twitch-Kanal",
+    streaming_visit_btn: "▶ Auf Twitch ansehen",
     about_me_logs_title: "KODIERUNG DES LEBENS",
     about_me_text_1: "Neben der Technologie bin ich leidenschaftlich gerne in der Natur unterwegs und verschiebe körperliche Grenzen. Bergwandern gibt mir einen perfekten mentalen Reset und fördert meine Konzentration auf die technische Forschung.",
     about_me_text_2: "Ich hege auch eine tiefe Neugierde für Psychologie, Computational Neuroscience und die Erforschung dessen, wie das menschliche Gehirn Informationen im Vergleich zu modernen künstlichen Netzwerken verarbeitet.",
