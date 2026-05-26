@@ -2091,11 +2091,39 @@ function updateGameHourLabels() {
   });
 }
 
-const easterEggImages = [
-  'assets/img/programming_books/Kei_Shirogane_crying_CPP.png',
-  'assets/img/programming_books/Sakura_Nene_LDD3.png',
-  'assets/img/programming_books/Emilia_Holding_Intro_to_Python.jpg'
+const easterEggImageFiles = [
+  'Kei_Shirogane_crying_CPP.png',
+  'Sakurajima_Mai_Linux_Essentials.jpg',
+  'Lain-Holding-PPP.png',
+  'Sakiko_Togawa_Reading_Python_Machine_Learning.png',
+  'Frieren_Holding_Komputer_Swiat_C++_Course.png',
+  'Yasuraoka_Hanabi_Reading_CSharp_Language_Book.png.png',
+  'Hatsune_Miku_Holding_Python_For_Beginners.png',
+  'zero_two_c++_the_ultimate_crash_course_to_learning_c++_from_basic_to_advanced_paul_laurence.jpg',
+  'Sakurajima_Mai_Holding_The_C++_Programming_Language.jpg',
+  'Makise Kurisu_Python.jpg',
+  'Chise_Hatori_Holding_C++_Book.jpg',
+  'Freiren_holding_c#_book.png',
+  'Akko_Kagari_The_Python_Book.jpg',
+  'Sakura_Nene_LDD3.png',
+  'Hatsune_Miku_Holding_C#_Player\'s_Guide.png',
+  'Frieren_Practical_Quantum_Computing_For_Developers.png',
+  'Misa_Amane_Death_Note_Holding_Algorithms_Book.jpg',
+  'Komi_Shouko_holding_Introduction_to_Algorithms.jpg',
+  'mai_sakurajima_holding_python_programming_3in1_book.png',
+  'Emilia_Holding_Intro_to_Python.jpg',
+  'Violet_Evergarden_Holds_C_Sharp_Book_Portuguese.png',
+  'Lain_Iwakura_Holding_HolyC_Book.png',
+  'Sakurajima_Mai_Holding_The_HolyC_Programming_Language.jpg',
+  'Kuriyama_Mirai_reading_OOP_and_Java.png',
+  'Bocchi_the_rock_Hitori_Gotoh_the_c++_programming_language.png',
+  'Hana_Java_Performance.png',
+  'Aoba_Suzukaze_techgo_Python_For_Beginners.png',
+  'Vigne_hold_TensorFlow_for_Deep_Learning.png'
 ];
+const easterEggImages = easterEggImageFiles.map(
+  (fileName) => `assets/img/programming_books/${encodeURIComponent(fileName)}`
+);
 let easterEggClickCount = 0;
 const easterEggClickTarget = 5;
 
