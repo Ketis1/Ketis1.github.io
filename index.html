@@ -92,6 +92,24 @@
 
   .nav-logo:hover { opacity: 0.82; }
 
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .visitor-counter {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+  }
+
+  .visitor-counter img {
+    display: block;
+    height: 20px;
+    width: auto;
+  }
+
   .nav-links {
     display: flex;
     gap: 1.5rem;
@@ -1081,7 +1099,7 @@
       padding: 0 1rem;
       gap: 0.6rem;
     }
-    .nav-logo { margin-right: 0.4rem; }
+    .nav-brand { margin-right: 0.4rem; }
     .nav-links { gap: 1rem; margin: 0 0.3rem; }
     .nav-controls { margin-left: 0.4rem; }
   }
@@ -1089,6 +1107,7 @@
   /* MOBILE */
   @media (max-width: 640px) {
     .nav-links { display: none !important; }
+    .visitor-counter img { height: 18px; }
     .hero-name { font-size: 2.2rem; }
     main { padding: 72px 1.25rem 3rem; }
     .nav-controls { gap: 0.5rem; }
@@ -1101,7 +1120,12 @@
 <body>
 
 <nav>
-  <div class="nav-logo" id="nav-logo-trigger">&lt;MICHAŁ_SITEK/&gt;</div>
+  <div class="nav-brand">
+    <div class="nav-logo" id="nav-logo-trigger">&lt;MICHAŁ_SITEK/&gt;</div>
+    <a class="visitor-counter" href="https://hitscounter.dev/" target="_blank" rel="noopener noreferrer" aria-label="Visitors counter">
+      <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fketis1.github.io%2F&amp;label=Visitors&amp;icon=door-open&amp;color=%238540f5&amp;message=&amp;style=flat&amp;tz=UTC" alt="Visitors counter">
+    </a>
+  </div>
   <ul class="nav-links" id="prof-nav-links">
     <li><a href="#experience" data-i18n="nav_exp">Experience</a></li>
     <li><a href="#education" data-i18n="nav_edu">Education</a></li>
