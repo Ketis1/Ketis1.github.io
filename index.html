@@ -1158,8 +1158,6 @@
     <li><a href="#about-me" onclick="switchPersonalTab('about-me')" data-i18n="nav_about_me">About Me</a></li>
     <li><a href="#mountains" onclick="switchPersonalTab('mountains')" data-i18n="nav_mountains">Mountains</a></li>
     <li><a href="#movies" onclick="switchPersonalTab('movies')" data-i18n="nav_movies">Movies</a></li>
-    <li><a href="#games" onclick="switchPersonalTab('games')" data-i18n="nav_games">Games</a></li>
-    <li><a href="#streaming" onclick="switchPersonalTab('streaming')" data-i18n="nav_streaming">Streaming</a></li>
     <li><a href="#links" onclick="switchPersonalTab('links')" data-i18n="nav_links">Links</a></li>
   </ul>
   <div class="nav-controls">
@@ -1516,12 +1514,6 @@
       <button class="personal-tab" onclick="switchPersonalTab('movies')" data-personal-tab="movies">
         <span data-i18n="personal_tab_movies">Movies</span>
       </button>
-      <button class="personal-tab" onclick="switchPersonalTab('games')" data-personal-tab="games">
-        <span data-i18n="personal_tab_games">Games</span>
-      </button>
-      <button class="personal-tab" onclick="switchPersonalTab('streaming')" data-personal-tab="streaming">
-        <span data-i18n="personal_tab_streaming">Streaming</span>
-      </button>
       <button class="personal-tab" onclick="switchPersonalTab('links')" data-personal-tab="links">
         <span data-i18n="personal_tab_links">Links</span>
       </button>
@@ -1745,81 +1737,6 @@
       </div>
     </div>
 
-    <div class="personal-tab-content" id="tab-games">
-      <div class="personal-grid">
-        <div class="personal-card wide">
-          <div class="personal-card-header">
-            <h3 data-i18n="games_title">TOP 5 MOST PLAYED GAMES</h3>
-            <a href="https://steamcommunity.com/id/ketis1/" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="games_steam_link">⌥ Steam Profile</a>
-          </div>
-          <p class="personal-card-desc" data-i18n="games_desc">Ranking based on total playtime. Click a field below to reveal the hours.</p>
-          <div class="game-grid">
-            <div class="game-card">
-              <div class="game-card-header">
-                <span class="game-rank">#1</span>
-              </div>
-              <div class="game-name">Counter-Strike 2</div>
-              <button class="game-hours-toggle" type="button" data-hours="2234h" data-state="hidden" aria-expanded="false" onclick="toggleGameHours(this)"></button>
-            </div>
-            <div class="game-card">
-              <div class="game-card-header">
-                <span class="game-rank">#2</span>
-              </div>
-              <div class="game-name">PUBG: BATTLEGROUNDS</div>
-              <button class="game-hours-toggle" type="button" data-hours="2126h" data-state="hidden" aria-expanded="false" onclick="toggleGameHours(this)"></button>
-            </div>
-            <div class="game-card">
-              <div class="game-card-header">
-                <span class="game-rank">#3</span>
-              </div>
-              <div class="game-name">Grand Theft Auto V Legacy</div>
-              <button class="game-hours-toggle" type="button" data-hours="1531h" data-state="hidden" aria-expanded="false" onclick="toggleGameHours(this)"></button>
-            </div>
-            <div class="game-card">
-              <div class="game-card-header">
-                <span class="game-rank">#4</span>
-              </div>
-              <div class="game-name">Rust</div>
-              <button class="game-hours-toggle" type="button" data-hours="540h" data-state="hidden" aria-expanded="false" onclick="toggleGameHours(this)"></button>
-            </div>
-            <div class="game-card">
-              <div class="game-card-header">
-                <span class="game-rank">#5</span>
-              </div>
-              <div class="game-name">Cyberpunk 2077</div>
-              <button class="game-hours-toggle" type="button" data-hours="322h" data-state="hidden" aria-expanded="false" onclick="toggleGameHours(this)"></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="personal-tab-content" id="tab-streaming">
-      <div class="personal-grid">
-        <div class="personal-card wide">
-          <div class="personal-card-header">
-            <h3 data-i18n="streaming_title">LIVE ON TWITCH</h3>
-            <a href="https://www.twitch.tv/ketis1_" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="streaming_channel_link">⌥ Twitch Channel</a>
-          </div>
-          <p class="personal-card-desc" data-i18n="streaming_desc">I stream a variety of games — from competitive shooters like CS2 and PUBG to open-world adventures. My streams are a mix of serious ranked grind, fun challenges, and just chilling with the chat. Come hang out live or catch the VODs on my channel.</p>
-          <div class="twitch-embed-wrapper">
-            <iframe
-              id="twitch-embed"
-              src="https://player.twitch.tv/?channel=ketis1_&parent=ketis1.github.io"
-              height="480"
-              width="100%"
-              allowfullscreen
-              style="border:none; border-radius:8px; display:block; margin-top:1.2rem;">
-            </iframe>
-          </div>
-          <div style="margin-top:1.2rem; text-align:center;">
-            <a href="https://www.twitch.tv/ketis1_" target="_blank" rel="noopener noreferrer" class="project-link" style="font-size:1rem; padding:0.6rem 1.4rem;" data-i18n="streaming_visit_btn">▶ Watch on Twitch</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="personal-tab-content" id="tab-links">
       <div class="personal-grid">
         <div class="personal-card wide">
@@ -1841,16 +1758,8 @@
               <a href="mailto:michal.sitek.it@gmail.com" class="project-link" data-i18n="links_mail">⌥ Send Email</a>
             </li>
             <li class="peak-item">
-              <span class="peak-name">Twitch</span>
-              <a href="https://www.twitch.tv/ketis1_" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="links_twitch">⌥ Open Channel</a>
-            </li>
-            <li class="peak-item">
               <span class="peak-name">Filmweb</span>
               <a href="https://www.filmweb.pl/user/Ketis1" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="links_filmweb">⌥ Open Profile</a>
-            </li>
-            <li class="peak-item">
-              <span class="peak-name">Steam</span>
-              <a href="https://steamcommunity.com/id/ketis1/" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="links_steam">⌥ Open Profile</a>
             </li>
             <li class="peak-item">
               <span class="peak-name">Chess.com</span>
@@ -1936,10 +1845,10 @@ const i18n = {
     contact_heading: "Get In Touch", contact_location: "Location", contact_city: "Warsaw & Berlin",
     footer_text: "Designed & developed by Michał Sitek © 2026",
     mode_prof: "Professional", mode_pers: "Personal",
-    nav_mountains: "Mountains", nav_movies: "Movies", nav_games: "Games", nav_about_me: "About Me", nav_streaming: "Streaming", nav_links: "Links",
+    nav_mountains: "Mountains", nav_movies: "Movies", nav_about_me: "About Me", nav_links: "Links",
     personal_logs_label: "Personal Logs", personal_logs_heading: "OFF-DUTY DATABASE",
     personal_logs_bio: "Exploring life beyond compilation and AI architectures. Log files for physical ascents, artistic inspirations, and off-duty activities.",
-    personal_tab_mountains: "Mountains", personal_tab_movies: "Movies", personal_tab_games: "Games", personal_tab_about: "About Me", personal_tab_streaming: "Streaming", personal_tab_links: "Links",
+    personal_tab_mountains: "Mountains", personal_tab_movies: "Movies", personal_tab_about: "About Me", personal_tab_links: "Links",
     mountains_achieved_title: "CONQUERED PEAKS", mountains_status_conquered: "VERIFIED",
     mountains_achieved_desc: "Highest points reached in Poland and beyond.",
     mountains_wishlist_title: "FUTURE ASCENTS", mountains_status_wishlist: "QUEUED",
@@ -1951,22 +1860,12 @@ const i18n = {
     movie_fightclub_desc: "Dark, chaotic, and iconic with a voice and energy that still hits hard.",
     movie_tenet_desc: "A dense sci-fi puzzle packed with momentum, scale, and pure cinematic ambition.",
     movies_filmweb_btn: "▶ Filmweb Profile",
-    games_title: "TOP 5 MOST PLAYED GAMES",
-    games_desc: "Ranking based on total playtime. Click a field below to reveal the hours.",
-    games_steam_link: "⌥ Steam Profile",
-    game_reveal_hours: "Reveal hours",
-    streaming_title: "LIVE ON TWITCH",
-    streaming_desc: "I stream a variety of games — from competitive shooters like CS2 and PUBG to open-world adventures. My streams are a mix of serious ranked grind, fun challenges, and just chilling with the chat. Come hang out live or catch the VODs on my channel.",
-    streaming_channel_link: "⌥ Twitch Channel",
-    streaming_visit_btn: "▶ Watch on Twitch",
     links_title: "ONLINE HUB",
     links_desc: "Main profiles and contact points gathered in one place.",
     links_linkedin: "⌥ Open Profile",
     links_github: "⌥ Open Profile",
     links_mail: "⌥ Send Email",
-    links_twitch: "⌥ Open Channel",
     links_filmweb: "⌥ Open Profile",
-    links_steam: "⌥ Open Profile",
     links_chess: "⌥ Open Profile",
     links_x: "⌥ Open Profile",
     links_instagram: "⌥ Open Profile",
@@ -2025,10 +1924,10 @@ const i18n = {
     contact_heading: "Kontakt", contact_location: "Lokalizacja", contact_city: "Warszawa & Berlin",
     footer_text: "Designed & developed by Michał Sitek © 2026",
     mode_prof: "Profesjonalne", mode_pers: "Prywatne",
-    nav_mountains: "Góry", nav_movies: "Filmy", nav_games: "Gry", nav_about_me: "O mnie", nav_streaming: "Streaming", nav_links: "Linki",
+    nav_mountains: "Góry", nav_movies: "Filmy", nav_about_me: "O mnie", nav_links: "Linki",
     personal_logs_label: "Rejestry Osobiste", personal_logs_heading: "BAZA DANYCH PO SŁUŻBIE",
     personal_logs_bio: "Odkrywanie życia poza kompilacją i architekturami AI. Logi z fizycznych podejść, artystycznych inspiracji i aktywności poza pracą.",
-    personal_tab_mountains: "Góry", personal_tab_movies: "Filmy", personal_tab_games: "Gry", personal_tab_about: "O mnie", personal_tab_streaming: "Streaming", personal_tab_links: "Linki",
+    personal_tab_mountains: "Góry", personal_tab_movies: "Filmy", personal_tab_about: "O mnie", personal_tab_links: "Linki",
     mountains_achieved_title: "ZDOBYTE SZCZYTY", mountains_status_conquered: "ZWERYFIKOWANO",
     mountains_achieved_desc: "Najwyższe punkty osiągnięte w Polsce i poza nią.",
     mountains_wishlist_title: "PRZYSZŁE WEJŚCIA", mountains_status_wishlist: "W KOLEJCE",
@@ -2040,22 +1939,12 @@ const i18n = {
     movie_fightclub_desc: "Mroczny, chaotyczny i ikoniczny film z energią, która nadal uderza z pełną siłą.",
     movie_tenet_desc: "Gęsta zagadka science fiction pełna rozmachu, tempa i czystej filmowej ambicji.",
     movies_filmweb_btn: "▶ Profil Filmweb",
-    games_title: "TOP 5 NAJCZĘŚCIEJ OGRYWANYCH GIER",
-    games_desc: "Ranking według łącznego czasu gry. Kliknij poniższe pole, aby odsłonić liczbę godzin.",
-    games_steam_link: "⌥ Profil Steam",
-    game_reveal_hours: "Pokaż godziny",
-    streaming_title: "NA ŻYWO NA TWITCHU",
-    streaming_desc: "Streamuję różne gry — od shooterów kompetytywnych jak CS2 i PUBG po przygody w otwartym świecie. Moje streamy to mieszanka poważnego grindowania rankingowego, zabawnych wyzwań i luźnego spędzania czasu z chatem. Wpadaj na żywo lub obejrzyj VODy na moim kanale.",
-    streaming_channel_link: "⌥ Kanał Twitch",
-    streaming_visit_btn: "▶ Oglądaj na Twitchu",
     links_title: "CENTRUM ONLINE",
     links_desc: "Najważniejsze profile i kanały kontaktu zebrane w jednym miejscu.",
     links_linkedin: "⌥ Otwórz profil",
     links_github: "⌥ Otwórz profil",
     links_mail: "⌥ Wyślij e-mail",
-    links_twitch: "⌥ Otwórz kanał",
     links_filmweb: "⌥ Otwórz profil",
-    links_steam: "⌥ Otwórz profil",
     links_chess: "⌥ Otwórz profil",
     links_x: "⌥ Otwórz profil",
     links_instagram: "⌥ Otwórz profil",
@@ -2114,10 +2003,10 @@ const i18n = {
     contact_heading: "Kontakt aufnehmen", contact_location: "Standort", contact_city: "Warschau & Berlin",
     footer_text: "Designed & developed by Michał Sitek © 2026",
     mode_prof: "Beruflich", mode_pers: "Persönlich",
-    nav_mountains: "Berge", nav_movies: "Filme", nav_games: "Spiele", nav_about_me: "Über mich", nav_streaming: "Streaming", nav_links: "Links",
+    nav_mountains: "Berge", nav_movies: "Filme", nav_about_me: "Über mich", nav_links: "Links",
     personal_logs_label: "Persönliche Protokolle", personal_logs_heading: "OFF-DUTY DATENBANK",
     personal_logs_bio: "Erforschung des Lebens jenseits von Kompilierung und KI-Architekturen. Protokolldateien für physische Aufstiege, künstlerische Inspirationen und Freizeitaktivitäten.",
-    personal_tab_mountains: "Berge", personal_tab_movies: "Filme", personal_tab_games: "Spiele", personal_tab_about: "Über mich", personal_tab_streaming: "Streaming", personal_tab_links: "Links",
+    personal_tab_mountains: "Berge", personal_tab_movies: "Filme", personal_tab_about: "Über mich", personal_tab_links: "Links",
     mountains_achieved_title: "BEZWUNGENE GIPFEL", mountains_status_conquered: "VERIFIZIERT",
     mountains_achieved_desc: "Die höchsten erreichten Punkte in Polen und darüber hinaus.",
     mountains_wishlist_title: "ZUKÜNFTIGE AUFSTIEGE", mountains_status_wishlist: "GEPLANT",
@@ -2129,22 +2018,12 @@ const i18n = {
     movie_fightclub_desc: "Dunkel, chaotisch und ikonisch, mit einer Stimme und Energie, die bis heute hart trifft.",
     movie_tenet_desc: "Ein dichtes Sci-Fi-Rätsel voller Tempo, Größe und purer filmischer Ambition.",
     movies_filmweb_btn: "▶ Filmweb-Profil",
-    games_title: "TOP 5 MEISTGESPIELTE SPIELE",
-    games_desc: "Ranking nach gesamter Spielzeit. Klicke unten auf ein Feld, um die Stunden einzublenden.",
-    games_steam_link: "⌥ Steam-Profil",
-    game_reveal_hours: "Stunden anzeigen",
-    streaming_title: "LIVE AUF TWITCH",
-    streaming_desc: "Ich streame verschiedene Spiele — von kompetitiven Shootern wie CS2 und PUBG bis hin zu Open-World-Abenteuern. Meine Streams sind eine Mischung aus ernstem Ranked-Grind, lustigen Challenges und entspanntem Zeit verbringen mit dem Chat. Schau live vorbei oder sieh dir die VODs auf meinem Kanal an.",
-    streaming_channel_link: "⌥ Twitch-Kanal",
-    streaming_visit_btn: "▶ Auf Twitch ansehen",
     links_title: "ONLINE-HUB",
     links_desc: "Wichtige Profile und Kontaktkanäle an einem Ort.",
     links_linkedin: "⌥ Profil öffnen",
     links_github: "⌥ Profil öffnen",
     links_mail: "⌥ E-Mail senden",
-    links_twitch: "⌥ Kanal öffnen",
     links_filmweb: "⌥ Profil öffnen",
-    links_steam: "⌥ Profil öffnen",
     links_chess: "⌥ Profil öffnen",
     links_x: "⌥ Profil öffnen",
     links_instagram: "⌥ Profil öffnen",
@@ -2164,7 +2043,6 @@ function setLang(lang) {
     const key = el.getAttribute('data-i18n');
     if (i18n[lang][key]) el.textContent = i18n[lang][key];
   });
-  updateGameHourLabels();
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
   });
@@ -2213,20 +2091,6 @@ function switchPersonalTab(tabId) {
   });
 }
 
-function toggleGameHours(button) {
-  const isRevealed = button.getAttribute('data-state') === 'revealed';
-  button.setAttribute('data-state', isRevealed ? 'hidden' : 'revealed');
-  button.setAttribute('aria-expanded', String(!isRevealed));
-  updateGameHourLabels();
-}
-
-function updateGameHourLabels() {
-  document.querySelectorAll('.game-hours-toggle').forEach(button => {
-    const isRevealed = button.getAttribute('data-state') === 'revealed';
-    button.classList.toggle('revealed', isRevealed);
-    button.textContent = isRevealed ? button.getAttribute('data-hours') : i18n[currentLang].game_reveal_hours;
-  });
-}
 
 const easterEggImageFiles = [
   'Kei_Shirogane_crying_CPP.png',
